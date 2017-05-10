@@ -23,13 +23,20 @@ function crondale_options_install() {
 
 	$create_item_table_query = "
 	CREATE TABLE IF NOT EXISTS `{$table_name}items` (
-	`Id` INT NOT NULL AUTO_INCREMENT , `Name` VARCHAR(255) NOT NULL , `Description` TEXT NOT NULL , `Price` INT NOT NULL , `MinimumOrder` SMALLINT NOT NULL , `FrontBackOption` BOOLEAN NOT NULL , `ExtraLogo` BOOLEAN NOT NULL , PRIMARY KEY (`Id`)) ENGINE = InnoDB DEFAULT CHARSET=utf8;
+	`Id` INT NOT NULL AUTO_INCREMENT , `Name` VARCHAR(255) NOT NULL , `Description` TEXT NOT NULL , `Price`  FLOAT(11) NOT NULL , `MinimumOrder` SMALLINT NOT NULL , `FrontBackOption` BOOLEAN NOT NULL , `ExtraLogo` BOOLEAN NOT NULL , PRIMARY KEY (`Id`)) ENGINE = InnoDB DEFAULT CHARSET=utf8;
 	";
 
+	$create_item_color_table_query = "
+	CREATE TABLE IF NOT EXISTS `{$table_name}item_colors` (
+	`Item_Id` INT NOT NULL , `Color_Id` INT NOT NULL,
+	PRIMARY KEY (`Item_Id`, `Color_Id`)
+	) ENGINE = InnoDB  DEFAULT CHARSET=utf8;
+	";
 
 	require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
 	dbDelta( $create_color_table_query );
 	dbDelta( $create_item_table_query );
+	dbDelta( $create_item_color_table_query );
 }
 
 
@@ -54,6 +61,14 @@ function crondale_modifymenu() {
 	'russ_create_color'); //function
 
 
+	add_submenu_page('russ_item_list', //parent slug
+	'Add New Item', //page title
+	'Add New Item', //menu title
+	'manage_options', //capability
+	'russ_create_item', //menu slug
+	'russ_create_item'); //function
+
+
 	//this submenu is HIDDEN, however, we need to add it anyways
 	add_submenu_page(null, //parent slug
 	'Delete Color', //page title
@@ -64,11 +79,21 @@ function crondale_modifymenu() {
 	
 }
 
+
+function my_enqueue($hook) {
+  wp_register_style('my-plugin', plugins_url('crondale-russ-plugin/style-admin.css'));
+  wp_enqueue_style('my-plugin');
+}
+
+
+add_action( 'admin_enqueue_scripts', 'my_enqueue' );
+
 define('ROOTDIR1', plugin_dir_path(__FILE__));
 
 require_once(ROOTDIR1 . 'russ-item-list.php');
 require_once(ROOTDIR1 . 'russ-create-color.php');
 require_once(ROOTDIR1 . 'russ-update-color.php');
+require_once(ROOTDIR1 . 'russ-create-item.php');
 
 	
 ?>

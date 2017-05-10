@@ -4,7 +4,6 @@ echo 1;
 
 function russ_item_list() {
     ?>
-    <link type="text/css" href="<?php echo WP_PLUGIN_URL; ?>/test-plugin/style-admin.css" rel="stylesheet" />
     <div class="wrap">
         <h2>Colors</h2>
         <div class="tablenav top">

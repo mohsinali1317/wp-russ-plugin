@@ -6,7 +6,7 @@ function russ_create_color() {
         global $wpdb;
         $table_name = $wpdb->prefix . "russ_colors";
 
-        $wpdb->insert(
+       $res = $wpdb->insert(
                 $table_name, //table
                 array('Name' => $name), //data
                 array('%s') //data format			
@@ -15,7 +15,6 @@ function russ_create_color() {
         wp_redirect(admin_url('admin.php?page=russ_item_list'));
     }
     ?>
-    <link type="text/css" href="<?php echo WP_PLUGIN_URL; ?>/test-plugin/style-admin.css" rel="stylesheet" />
     <div class="wrap">
         <h2>Add New Color</h2>
         <?php if (isset($message)): ?><div class="updated"><p><?php echo $message; ?></p></div><?php endif; ?>

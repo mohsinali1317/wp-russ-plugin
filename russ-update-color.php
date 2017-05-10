@@ -32,7 +32,6 @@ function russ_update_color() {
         }
     }
     ?>
-    <link type="text/css" href="<?php echo WP_PLUGIN_URL; ?>/test-plugin/style-admin.css" rel="stylesheet" />
     <div class="wrap">
         <h2>Colors</h2>
 
