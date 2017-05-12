@@ -88,12 +88,21 @@ function my_enqueue($hook) {
 
 add_action( 'admin_enqueue_scripts', 'my_enqueue' );
 
+add_action( 'wp_enqueue_scripts', 'my_enqueue_client' );
+
+
+
+add_shortcode("crondale_russ_shop", "crondale_russ_shop_client");
+ 
+
 define('ROOTDIR1', plugin_dir_path(__FILE__));
 
 require_once(ROOTDIR1 . 'russ-item-list.php');
 require_once(ROOTDIR1 . 'russ-create-color.php');
 require_once(ROOTDIR1 . 'russ-update-color.php');
 require_once(ROOTDIR1 . 'russ-create-item.php');
+
+require_once(ROOTDIR1 . 'client/russ-client.php');
 
 	
 ?>

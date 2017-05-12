@@ -38,8 +38,6 @@ function russ_create_item() {
         }
 
          $message.="Item inserted";
-         $_POST = array();
-        // wp_redirect(admin_url('admin.php?page=russ_item_list'));
     }
     ?>
 
