@@ -163,6 +163,7 @@ function crondale_russ_shop_client()
             </span>
 
             <hr>
+            <button class="btn secondStep">Gå videre</button>
             <?php
             ?>
 

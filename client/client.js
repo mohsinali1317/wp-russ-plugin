@@ -14,33 +14,44 @@ jQuery(document).ready(function($) {
         var price = data.data('price');
         var minimumOrder = data.data('minimum-order');
 
+        var totalPrice = price * minimumOrder;
+        data.data('total-price',totalPrice );
+
         spanForPrice.text(price);
-        spanForTotalPrice.text(price * minimumOrder);
-
-
+        spanForTotalPrice.text(totalPrice);
 
 
     });
 
     $('#extraLogo').click(function() {
 
-        var pricePerPerson = $(this).closest('.item').children('.pricePerPerson');
-        var totalPrice =$(this).closest('.item').children('.totalPrice');
+        var item = $(this).closest('.item');
+
+        var pricePerPerson = item.children('.pricePerPerson');
+        var totalPrice = item.children('.totalPrice');
 
         var spanForPrice = pricePerPerson.children('.priceFromData');
         var spanForTotalPrice = totalPrice.children('span');
 
-        var data = $(this).closest('.item').children('.myData');
+        var data = item.children('.myData');
 
         var price = data.data('price');
-        var minimumOrder = data.data('minimum-order');
+
+        var minmumOrders = data.data('minimum-order');
+
+        var itemRows = item.children('.item-row').length;
+
+        var numberOfOrders = itemRows;
+
+        if(itemRows < minmumOrders)
+            numberOfOrders = minmumOrders;
 
         if ($(this).is(':checked')) {
             price += 99;
-            priceMaipulation(price,data,spanForPrice,spanForTotalPrice,minimumOrder);
+            priceMaipulation(price,data,spanForPrice,spanForTotalPrice,numberOfOrders);
         }else{
             price -= 99;
-            priceMaipulation(price,data,spanForPrice,spanForTotalPrice,minimumOrder);
+            priceMaipulation(price,data,spanForPrice,spanForTotalPrice,numberOfOrders);
         }
 
     });
@@ -53,7 +64,9 @@ jQuery(document).ready(function($) {
 
         var totalPrice = item.children('.totalPrice');
 
-        var itemRow = item.find('.item-row').last();
+        var itemRows = item.children('.item-row');
+
+        var itemRow = itemRows.last();
 
         var newItem = itemRow.clone();
 
@@ -65,9 +78,9 @@ jQuery(document).ready(function($) {
         var data = item.children('.myData');
 
         var price = data.data('price');
-        var minimumOrder = data.data('minimum-order');
 
-        price += 99;
+        var  minimumOrder = itemRows.length + 1;
+
         priceMaipulation(price,data,spanForPrice,spanForTotalPrice,minimumOrder);
 
 
@@ -87,34 +100,54 @@ jQuery(document).ready(function($) {
 
         var minimumOrder = data.data('minimum-order');
 
-        var itemRows = item.find('.item-row');
+        var itemRows = item.children('.item-row');
 
         if(itemRows.length <= minimumOrder)
             return;
 
         var itemRow = itemRows.last();
 
-        itemRow.remove( );
+        itemRow.remove();
 
         var spanForPrice = pricePerPerson.children('.priceFromData');
         var spanForTotalPrice = totalPrice.children('span');
 
+        var numberOfOrders = itemRows.length;
 
+        if(itemRows.length > minimumOrder)
+            numberOfOrders -= 1;
+        else
+            numberOfOrders = minimumOrder;
 
-
-        price -= 99;
-        priceMaipulation(price,data,spanForPrice,spanForTotalPrice,minimumOrder);
+        priceMaipulation(price,data,spanForPrice,spanForTotalPrice,numberOfOrders);
     });
 
+    $('.secondStep').click(function () {
+
+        var item = $(this).closest('.item');
+
+        var data = item.children('.myData');
+
+        var price = data.data('price');
+        var minimumOrder = data.data('minimum-order');
+
+        var totalPrice = data.data('total-price');
+
+        console.log(totalPrice);
 
 
+
+    });
 
 });
 
 
 function priceMaipulation(price, data, spanForPrice, spanForTotalPrice,minimumOrder){
 
+    var totalPrice = price * minimumOrder;
     spanForPrice.text(price);
-    spanForTotalPrice.text(price * minimumOrder);
+    spanForTotalPrice.text(totalPrice);
     data.data('price', price);
+    data.data('total-price', totalPrice);
+
 }

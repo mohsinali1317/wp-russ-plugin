@@ -29,16 +29,16 @@
       <file leaf-file-name="russ-client.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/russ-client.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="723">
-              <caret line="135" column="69" lean-forward="false" selection-start-line="135" selection-start-column="57" selection-end-line="135" selection-end-column="69" />
+            <state relative-caret-position="587">
+              <caret line="160" column="132" lean-forward="true" selection-start-line="160" selection-start-column="132" selection-end-line="160" selection-end-column="132" />
               <folding>
-                <marker date="1494581519449" expanded="true" signature="1052:1066" ph="SELECT * fro... ${$table_items}" />
-                <marker date="1494581519449" expanded="true" signature="1052:1079" ph="SELECT * fro... ${$table_items}" />
-                <marker date="1494581519449" expanded="true" signature="1052:1090" ph="SELECT * fro... ${$table_items}" />
-                <marker date="1494581519449" expanded="true" signature="1052:1096" ph="SELECT * fro... ${$table_items}" />
-                <marker date="1494581519449" expanded="true" signature="1220:1276" ph="SELECT Color... ${$table_item_colors}" />
-                <marker date="1494581519449" expanded="true" signature="1402:1441" ph="SELECT * fro... ${$table_colors}" />
-                <marker date="1494581519449" expanded="true" signature="5178:5227" ph="..." />
+                <marker date="1494829684839" expanded="true" signature="1052:1066" ph="SELECT * fro... ${$table_items}" />
+                <marker date="1494829684839" expanded="true" signature="1052:1079" ph="SELECT * fro... ${$table_items}" />
+                <marker date="1494829684839" expanded="true" signature="1052:1090" ph="SELECT * fro... ${$table_items}" />
+                <marker date="1494829684839" expanded="true" signature="1052:1096" ph="SELECT * fro... ${$table_items}" />
+                <marker date="1494829684839" expanded="true" signature="1220:1276" ph="SELECT Color... ${$table_item_colors}" />
+                <marker date="1494829684839" expanded="true" signature="1402:1441" ph="SELECT * fro... ${$table_colors}" />
+                <marker date="1494829684839" expanded="true" signature="5178:5227" ph="..." />
               </folding>
             </state>
           </provider>
@@ -47,12 +47,10 @@
       <file leaf-file-name="client.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/client.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="715">
-              <caret line="101" column="0" lean-forward="true" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
+            <state relative-caret-position="749">
+              <caret line="121" column="81" lean-forward="false" selection-start-line="121" selection-start-column="81" selection-end-line="121" selection-end-column="81" />
               <folding>
-                <element signature="e#109#616#0" expanded="false" />
-                <element signature="e#657#1403#0" expanded="false" />
-                <element signature="n#!!block;n#priceMaipulation#0" expanded="false" />
+                <element signature="e#109#698#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -148,6 +146,69 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration default="true" type="CodeceptionConfigurationType" factoryName="Codeception">
+      <PhpTestRunnerSettings />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpSpecConfigurationType" factoryName="PHPSpec">
+      <PhpTestRunnerSettings />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+  </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
@@ -158,15 +219,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1494572496853</updated>
-      <workItem from="1494572498544" duration="9205000" />
+      <workItem from="1494572498544" duration="12226000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9205000" />
+    <option name="totallyTimeSpent" value="12226000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1176" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18020834" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -242,28 +303,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/russ-client.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="723">
-          <caret line="135" column="69" lean-forward="false" selection-start-line="135" selection-start-column="57" selection-end-line="135" selection-end-column="69" />
+        <state relative-caret-position="587">
+          <caret line="160" column="132" lean-forward="true" selection-start-line="160" selection-start-column="132" selection-end-line="160" selection-end-column="132" />
           <folding>
-            <marker date="1494581519449" expanded="true" signature="1052:1066" ph="SELECT * fro... ${$table_items}" />
-            <marker date="1494581519449" expanded="true" signature="1052:1079" ph="SELECT * fro... ${$table_items}" />
-            <marker date="1494581519449" expanded="true" signature="1052:1090" ph="SELECT * fro... ${$table_items}" />
-            <marker date="1494581519449" expanded="true" signature="1052:1096" ph="SELECT * fro... ${$table_items}" />
-            <marker date="1494581519449" expanded="true" signature="1220:1276" ph="SELECT Color... ${$table_item_colors}" />
-            <marker date="1494581519449" expanded="true" signature="1402:1441" ph="SELECT * fro... ${$table_colors}" />
-            <marker date="1494581519449" expanded="true" signature="5178:5227" ph="..." />
+            <marker date="1494829684839" expanded="true" signature="1052:1066" ph="SELECT * fro... ${$table_items}" />
+            <marker date="1494829684839" expanded="true" signature="1052:1079" ph="SELECT * fro... ${$table_items}" />
+            <marker date="1494829684839" expanded="true" signature="1052:1090" ph="SELECT * fro... ${$table_items}" />
+            <marker date="1494829684839" expanded="true" signature="1052:1096" ph="SELECT * fro... ${$table_items}" />
+            <marker date="1494829684839" expanded="true" signature="1220:1276" ph="SELECT Color... ${$table_item_colors}" />
+            <marker date="1494829684839" expanded="true" signature="1402:1441" ph="SELECT * fro... ${$table_colors}" />
+            <marker date="1494829684839" expanded="true" signature="5178:5227" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/client.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="715">
-          <caret line="101" column="0" lean-forward="true" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
+        <state relative-caret-position="749">
+          <caret line="121" column="81" lean-forward="false" selection-start-line="121" selection-start-column="81" selection-end-line="121" selection-end-column="81" />
           <folding>
-            <element signature="e#109#616#0" expanded="false" />
-            <element signature="e#657#1403#0" expanded="false" />
-            <element signature="n#!!block;n#priceMaipulation#0" expanded="false" />
+            <element signature="e#109#698#0" expanded="false" />
           </folding>
         </state>
       </provider>
