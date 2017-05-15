@@ -32,9 +32,9 @@ function crondale_russ_shop_client()
 
     $html = "";
 
-    $items = $wpdb->get_results($wpdb->prepare("SELECT * from $table_items where Id=%s", 1));
+    //$items = $wpdb->get_results($wpdb->prepare("SELECT * from $table_items where Id=%s", 1));
 
-    //$items = $wpdb->get_results("SELECT * from $table_items");
+    $items = $wpdb->get_results("SELECT * from $table_items");
 
     foreach ($items as $key => $value) {
 
@@ -90,7 +90,7 @@ function crondale_russ_shop_client()
                 ?>
                 <div class="checkbox">
                     <label>
-                        <input type="checkbox" name="extraLogo" id="extraLogo" class="extraLogo"> Ekstra brystlogo (+ kr. 99 per genser)
+                        <input type="checkbox" name="extraLogo"  class="extraLogo"> Ekstra brystlogo (+ kr. 99 per genser)
                     </label>
                 </div>
 
@@ -293,6 +293,7 @@ function prefix_admin_add_order() {
 
 
 
+    wp_mail( "mohsinali1017@gmail.com", "test", "yess" );
 
 
 

@@ -28,7 +28,7 @@ jQuery(document).ready(function($) {
 
     });
 
-    $('#extraLogo').click(function() {
+    $('.extraLogo').click(function() {
 
         var item = $(this).closest('.item');
         var firstStep = item.children('.firstStep');
