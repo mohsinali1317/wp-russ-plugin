@@ -237,10 +237,15 @@ function prefix_admin_add_order() {
         $table_order_details = $wpdb->prefix . "russ_order_details";
 
 
+
         $order_receiver_info = $_REQUEST['orderAddress'];
         $order = $_REQUEST['order'];
 
-        $wpdb->insert(
+        $message = "An order has been created by " . $order_receiver_info['fullName'];
+
+        echo $message;
+
+            $wpdb->insert(
             $table_order_receiver_info, //table
             array('fullName' =>$order_receiver_info['fullName'] ,
                 'email' => $order_receiver_info['email'],
@@ -271,10 +276,6 @@ function prefix_admin_add_order() {
 
         foreach ($_REQUEST['parameters'] as $key => $value){
 
-            echo $value['name'];
-            echo $value['size'];
-            echo $value['color'];
-
 
             $wpdb->insert(
                 $table_order_details, //table
@@ -293,7 +294,7 @@ function prefix_admin_add_order() {
 
 
 
-    wp_mail( "mohsinali1017@gmail.com", "test", "yess" );
+    wp_mail( "mohsinali1017@gmail.com", "Order created", $message );
 
 
 
