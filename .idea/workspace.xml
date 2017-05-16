@@ -33,21 +33,22 @@
       <file leaf-file-name="russ-client.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/russ-client.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="243" column="51" lean-forward="false" selection-start-line="243" selection-start-column="51" selection-end-line="243" selection-end-column="51" />
+            <state relative-caret-position="1478">
+              <caret line="229" column="0" lean-forward="true" selection-start-line="229" selection-start-column="0" selection-end-line="229" selection-end-column="0" />
               <folding>
                 <element signature="e#5774#5795#0#HTML" expanded="true" />
-                <element signature="e#5750#7746#0#HTML" expanded="false" />
-                <marker date="1494852466028" expanded="true" signature="1054:1068" ph="SELECT * fro... ${$table_items}" />
-                <marker date="1494852466028" expanded="true" signature="1054:1081" ph="SELECT * fro... ${$table_items}" />
-                <marker date="1494852466028" expanded="true" signature="1054:1092" ph="SELECT * fro... ${$table_items}" />
-                <marker date="1494852466028" expanded="true" signature="1054:1098" ph="SELECT * fro... ${$table_items}" />
-                <marker date="1494852466028" expanded="true" signature="1134:1148" ph="SELECT * fro... ${$table_items}" />
-                <marker date="1494852466028" expanded="true" signature="1134:1160" ph="SELECT * fro... ${$table_items}" />
-                <marker date="1494852466028" expanded="true" signature="1134:1162" ph="SELECT * fro... ${$table_items}" />
-                <marker date="1494852466028" expanded="true" signature="1286:1342" ph="SELECT Color... ${$table_item_colors}" />
-                <marker date="1494852466028" expanded="true" signature="1529:1568" ph="SELECT * fro... ${$table_colors}" />
-                <marker date="1494852466028" expanded="true" signature="5296:5345" ph="..." />
+                <element signature="e#7576#7598#0#HTML" expanded="true" />
+                <element signature="n#prefix_admin_add_order#0;n#!!top" expanded="false" />
+                <marker date="1494921157137" expanded="true" signature="1054:1068" ph="SELECT * fro... ${$table_items}" />
+                <marker date="1494921157137" expanded="true" signature="1054:1081" ph="SELECT * fro... ${$table_items}" />
+                <marker date="1494921157137" expanded="true" signature="1054:1092" ph="SELECT * fro... ${$table_items}" />
+                <marker date="1494921157137" expanded="true" signature="1054:1098" ph="SELECT * fro... ${$table_items}" />
+                <marker date="1494921157137" expanded="true" signature="1134:1148" ph="SELECT * fro... ${$table_items}" />
+                <marker date="1494921157137" expanded="true" signature="1134:1160" ph="SELECT * fro... ${$table_items}" />
+                <marker date="1494921157137" expanded="true" signature="1134:1162" ph="SELECT * fro... ${$table_items}" />
+                <marker date="1494921157137" expanded="true" signature="1286:1342" ph="SELECT Color... ${$table_item_colors}" />
+                <marker date="1494921157137" expanded="true" signature="1529:1568" ph="SELECT * fro... ${$table_colors}" />
+                <marker date="1494921157137" expanded="true" signature="5296:5345" ph="..." />
               </folding>
             </state>
           </provider>
@@ -56,8 +57,8 @@
       <file leaf-file-name="client.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/client.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2566">
-              <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+            <state relative-caret-position="749">
+              <caret line="229" column="0" lean-forward="true" selection-start-line="229" selection-start-column="0" selection-end-line="229" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -232,12 +233,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1494572496853</updated>
-      <workItem from="1494572498544" duration="24190000" />
+      <workItem from="1494572498544" duration="25786000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24190000" />
+    <option name="totallyTimeSpent" value="25786000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
@@ -330,29 +331,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/client.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2566">
-          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        <state relative-caret-position="749">
+          <caret line="229" column="0" lean-forward="true" selection-start-line="229" selection-start-column="0" selection-end-line="229" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/russ-client.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="243" column="51" lean-forward="false" selection-start-line="243" selection-start-column="51" selection-end-line="243" selection-end-column="51" />
+        <state relative-caret-position="1478">
+          <caret line="229" column="0" lean-forward="true" selection-start-line="229" selection-start-column="0" selection-end-line="229" selection-end-column="0" />
           <folding>
             <element signature="e#5774#5795#0#HTML" expanded="true" />
-            <element signature="e#5750#7746#0#HTML" expanded="false" />
-            <marker date="1494852466028" expanded="true" signature="1054:1068" ph="SELECT * fro... ${$table_items}" />
-            <marker date="1494852466028" expanded="true" signature="1054:1081" ph="SELECT * fro... ${$table_items}" />
-            <marker date="1494852466028" expanded="true" signature="1054:1092" ph="SELECT * fro... ${$table_items}" />
-            <marker date="1494852466028" expanded="true" signature="1054:1098" ph="SELECT * fro... ${$table_items}" />
-            <marker date="1494852466028" expanded="true" signature="1134:1148" ph="SELECT * fro... ${$table_items}" />
-            <marker date="1494852466028" expanded="true" signature="1134:1160" ph="SELECT * fro... ${$table_items}" />
-            <marker date="1494852466028" expanded="true" signature="1134:1162" ph="SELECT * fro... ${$table_items}" />
-            <marker date="1494852466028" expanded="true" signature="1286:1342" ph="SELECT Color... ${$table_item_colors}" />
-            <marker date="1494852466028" expanded="true" signature="1529:1568" ph="SELECT * fro... ${$table_colors}" />
-            <marker date="1494852466028" expanded="true" signature="5296:5345" ph="..." />
+            <element signature="e#7576#7598#0#HTML" expanded="true" />
+            <element signature="n#prefix_admin_add_order#0;n#!!top" expanded="false" />
+            <marker date="1494921157137" expanded="true" signature="1054:1068" ph="SELECT * fro... ${$table_items}" />
+            <marker date="1494921157137" expanded="true" signature="1054:1081" ph="SELECT * fro... ${$table_items}" />
+            <marker date="1494921157137" expanded="true" signature="1054:1092" ph="SELECT * fro... ${$table_items}" />
+            <marker date="1494921157137" expanded="true" signature="1054:1098" ph="SELECT * fro... ${$table_items}" />
+            <marker date="1494921157137" expanded="true" signature="1134:1148" ph="SELECT * fro... ${$table_items}" />
+            <marker date="1494921157137" expanded="true" signature="1134:1160" ph="SELECT * fro... ${$table_items}" />
+            <marker date="1494921157137" expanded="true" signature="1134:1162" ph="SELECT * fro... ${$table_items}" />
+            <marker date="1494921157137" expanded="true" signature="1286:1342" ph="SELECT Color... ${$table_item_colors}" />
+            <marker date="1494921157137" expanded="true" signature="1529:1568" ph="SELECT * fro... ${$table_colors}" />
+            <marker date="1494921157137" expanded="true" signature="5296:5345" ph="..." />
           </folding>
         </state>
       </provider>

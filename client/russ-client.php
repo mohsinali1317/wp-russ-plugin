@@ -120,7 +120,7 @@ function crondale_russ_shop_client()
                 <div class="form-group item-row">
                     <div class="row">
                         <div class="col-xs-12 col-sm-4">
-                            <input class="form-control nameOnShirt" type="text" name="nameOnShirt"  placeholder="Navn på rygg">
+                            <input class="form-control nameOnShirt" type="text" name="nameOnShirt"  placeholder="Navn på rygg" >
                         </div>
                         <div class="col-xs-4 col-sm-2">
                             <select class="form-control size">
@@ -143,7 +143,6 @@ function crondale_russ_shop_client()
                         </div>
                     </div>
                 </div>
-
 
                 <?php
             }
@@ -206,6 +205,8 @@ function crondale_russ_shop_client()
                         <input class="form-control russGroupName" type="text" placeholder="Navn på russegruppe" autocorrect="off">
                     </div>
                     <hr>
+                
+                    <span class="error" style="display: none;">Du må fylle inn alle feltene over.</span>
 
                     <hr>
 
@@ -225,6 +226,7 @@ function crondale_russ_shop_client()
 }
 
 
+// todo: check for the address etc stuff
 
 function prefix_admin_add_order() {
     // Handle request then generate response using echo or leaving PHP and using HTML
@@ -288,13 +290,12 @@ function prefix_admin_add_order() {
 
         }
 
-
     }
 
 
 
 
-    wp_mail( "mohsinali1017@gmail.com", "Order created", $message );
+   // wp_mail( "mohsinali1017@gmail.com", "Order created", $message );
 
 
 
