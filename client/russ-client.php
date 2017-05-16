@@ -58,165 +58,175 @@ function crondale_russ_shop_client()
 
         <div class='item'>
             <div class="firstStep">
-            <h1>
-                <?php echo $value->Name . " - " . $value->Price; ?>
-            </h1>
-            <p>
-                <?php echo $value->Description; ?>
-            </p>
-            <hr>
-
-            <?php
-
-
-
-            if ($value->FrontBackOption) {
-                ?>
-                <div class="radio">
-                    <label>
-                        <input type="radio" name="printPosition" class="printPosition" value="front" checked> Trykk foran
-                    </label>
-                </div>
-                <div class="radio">
-                    <label>
-                        <input type="radio" name="printPosition" class="printPosition" value="back"> Trykk bak
-                    </label>
-                </div>
+                <h1>
+                    <?php echo $value->Name . " - " . $value->Price; ?>
+                </h1>
+                <p>
+                    <?php echo $value->Description; ?>
+                </p>
                 <hr>
-                <?php
-            }
 
-            if ($value->ExtraLogo) {
+                <?php
+
+
+
+                if ($value->FrontBackOption) {
+                    ?>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="printPosition" class="printPosition" value="front" checked> Trykk foran
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="printPosition" class="printPosition" value="back"> Trykk bak
+                        </label>
+                    </div>
+                    <hr>
+                    <?php
+                }
+
+                if ($value->ExtraLogo) {
+                    ?>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="extraLogo"  class="extraLogo"> Ekstra brystlogo (+ kr. 99 per genser)
+                        </label>
+                    </div>
+
+                    <hr>
+                    <?php
+                }
+
                 ?>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox" name="extraLogo"  class="extraLogo"> Ekstra brystlogo (+ kr. 99 per genser)
+
+                <div class="row">
+                    <label class="col-xs-5 col-sm-4">
+                        Navn på rygg
+                    </label>
+                    <label class="col-xs-4 col-sm-3">
+                        Størrelse
+                    </label>
+                    <label class="col-xs-3 col-sm-2">
+                        Farge
                     </label>
                 </div>
 
-                <hr>
                 <?php
-            }
 
-            ?>
+                for ($i = 0; $i < $value->MinimumOrder; $i++) {
+                    ?>
 
-            <div class="row">
-                <label class="col-xs-5 col-sm-4">
-                    Navn på rygg
-                </label>
-                <label class="col-xs-4 col-sm-3">
-                    Størrelse
-                </label>
-                <label class="col-xs-3 col-sm-2">
-                    Farge
-                </label>
-            </div>
-
-            <?php
-
-            for ($i = 0; $i < $value->MinimumOrder; $i++) {
-                ?>
-
-                <div class="form-group item-row">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-4">
-                            <input class="form-control nameOnShirt" type="text" name="nameOnShirt"  placeholder="Navn på rygg" >
-                        </div>
-                        <div class="col-xs-4 col-sm-2">
-                            <select class="form-control size">
-                                <option value="xs">XS</option>
-                                <option value="s">S</option>
-                                <option value="m">M</option>
-                                <option value="l">L</option>
-                                <option value="xl">XL</option>
-                                <option value="xxl">2XL</option>
-                                <option value="xxxl">3XL</option>
-                            </select>
-                        </div>
-                        <div class="col-xs-4 col-sm-4">
-                            <?php
-                            echo $select;
-                            ?>
-                        </div>
-                        <div class="col-xs-4 col-sm-2">
-                            <button class="btn btn--icon removeGenser">Remove</button>
+                    <div class="form-group item-row">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-4">
+                                <input class="form-control nameOnShirt" type="text" name="nameOnShirt"  placeholder="Navn på rygg" >
+                            </div>
+                            <div class="col-xs-4 col-sm-2">
+                                <select class="form-control size">
+                                    <option value="xs">XS</option>
+                                    <option value="s">S</option>
+                                    <option value="m">M</option>
+                                    <option value="l">L</option>
+                                    <option value="xl">XL</option>
+                                    <option value="xxl">2XL</option>
+                                    <option value="xxxl">3XL</option>
+                                </select>
+                            </div>
+                            <div class="col-xs-4 col-sm-4">
+                                <?php
+                                echo $select;
+                                ?>
+                            </div>
+                            <div class="col-xs-4 col-sm-2">
+                                <button class="btn btn--icon removeGenser">Remove</button>
+                            </div>
                         </div>
                     </div>
+
+                    <?php
+                }
+
+                ?>
+
+                <div class="text-center">
+                    <button class="btn addGenser">
+                        Add genser
+                    </button>
                 </div>
 
-                <?php
-            }
+                <hr>
+                <h5 class="pricePerPerson">
+                    Price per person Kr.  <span class="priceFromData"> </span>  ,-
+                </h5>
+                <hr>
+                <h5 class="totalPrice">
+                    Total price Kr. <span> </span> ,-
+                </h5>
 
-            ?>
-
-            <div class="text-center">
-                <button class="btn addGenser">
-                    Add genser
-                </button>
-            </div>
-
-            <hr>
-            <h5 class="pricePerPerson">
-                Price per person Kr.  <span class="priceFromData"> </span>  ,-
-            </h5>
-            <hr>
-            <h5 class="totalPrice">
-                Total price Kr. <span> </span> ,-
-            </h5>
-
-            <!--    just for data-->
-            <span class="myData" data-minimum-order ="<?php echo $value->MinimumOrder; ?>" data-price="<?php echo $value->Price; ?>" data-item-id ="<?php echo $value->Id; ?>">
+                <!--    just for data-->
+                <span class="myData" data-minimum-order ="<?php echo $value->MinimumOrder; ?>" data-price="<?php echo $value->Price; ?>" data-item-id ="<?php echo $value->Id; ?>">
             </span>
 
-            <hr>
-            <button class="btn goToSecondStep">Gå videre</button>
-            <?php
-            ?>
+                <hr>
+                <button class="btn goToSecondStep">Gå videre</button>
+                <?php
+                ?>
 
 
             </div>
             <div class="secondStep" style="display: none">
 
-                    <h3>Send bestilling</h3>
-                    <div class="form-group">
-                        <input class="form-control fullName" type="text" placeholder="Fullt navn" autocorrect="off" autocapitalize="words" autocomplete="name">
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control email" type="email" placeholder="E-post" autocorrect="off" autocapitalize="off" autocomplete="email">
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control telephone" type="text" placeholder="Telefon" autocorrect="off" autocapitalize="off">
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control address" type="text" placeholder="Addresse" autocorrect="off">
-                    </div>
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <input class="form-control postNumber" type="text" placeholder="Postnummer" pattern="d*" novalidate="" autocorrect="off">
-                            </div>
-                            <div class="col-sm-6">
-                                <input class="form-control city" type="text" placeholder="Poststed">
-                            </div>
+                <h3>Send bestilling</h3>
+                <div class="form-group">
+                    <input class="form-control fullName" type="text" placeholder="Fullt navn" autocorrect="off" autocapitalize="words" autocomplete="name">
+                </div>
+                <div class="form-group">
+                    <input class="form-control email" type="email" placeholder="E-post" autocorrect="off" autocapitalize="off" autocomplete="email">
+                </div>
+                <div class="form-group">
+                    <input class="form-control telephone" type="text" placeholder="Telefon" autocorrect="off" autocapitalize="off">
+                </div>
+                <div class="form-group">
+                    <input class="form-control address" type="text" placeholder="Addresse" autocorrect="off">
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <input class="form-control postNumber" type="text" placeholder="Postnummer" pattern="d*" novalidate="" autocorrect="off">
+                        </div>
+                        <div class="col-sm-6">
+                            <input class="form-control city" type="text" placeholder="Poststed">
                         </div>
                     </div>
-                    <hr>
-                    <div class="form-group">
-                        <input class="form-control russGroupName" type="text" placeholder="Navn på russegruppe" autocorrect="off">
-                    </div>
-                    <hr>
-                
-                    <span class="error" style="display: none;">Du må fylle inn alle feltene over.</span>
+                </div>
+                <hr>
+                <div class="form-group">
+                    <input class="form-control russGroupName" type="text" placeholder="Navn på russegruppe" autocorrect="off">
+                </div>
+                <hr>
 
-                    <hr>
+                <span class="error" style="display: none;">Du må fylle inn alle feltene over.</span>
 
-                    <p>Når bestillingen er sendt får du instruksjoner om hvor du skal sende logoen.</p>
+                <hr>
 
-                    <button class="btn sendOrder">Send bestilling</button>
+                <p>Når bestillingen er sendt får du instruksjoner om hvor du skal sende logoen.</p>
+
+                <button class="btn sendOrder">Send bestilling</button>
+
+
+            </div>
+            <div class="thirdStep" style="display: none">
+
+                <h3>Takk for bestillingen!</h3>
+
+                <p>Bestilling information</p>
 
 
             </div>
         </div>
+
+        <hr>
 
         <?php
     }

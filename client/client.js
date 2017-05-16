@@ -177,6 +177,11 @@ jQuery(document).ready(function($) {
         var city = $('.city', secondStep).val();
         var russGroupName = $('.russGroupName', secondStep).val();
 
+        var error = $('.error', secondStep);
+
+
+
+
 
         var orderAddress = {
             'fullName' : fullName,
@@ -188,6 +193,12 @@ jQuery(document).ready(function($) {
             'russGroupName' : russGroupName
         };
 
+        if(!checkData(orderAddress)){
+
+            error.show();
+            return;
+        }
+
 
         var order = {
             'frontBack' : parameters.frontBack,
@@ -196,7 +207,6 @@ jQuery(document).ready(function($) {
             'itemId' : parameters.itemId
         }
 
-        console.log(order);
 
 
         // todo: fix the url composition
@@ -212,12 +222,12 @@ jQuery(document).ready(function($) {
                 order : order
             },
             success: function(response) {
-                console.log(response);
+                secondStep.hide();
+                $('.thirdStep').show();
             }
         });
 
     });
-
 
 
 });
@@ -231,4 +241,19 @@ function priceMaipulation(price, data, spanForPrice, spanForTotalPrice,minimumOr
     data.data('price', price);
     data.data('total-price', totalPrice);
 
+}
+
+function checkData(orderAddress) {
+
+    var okay = true;
+    jQuery.each(orderAddress, function( index, value ) {
+
+        if(value == "" || value == undefined){
+            okay = false;
+        }
+        if(!okay)
+            return;
+
+    });
+    return okay;
 }
