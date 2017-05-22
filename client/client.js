@@ -232,6 +232,17 @@ jQuery(document).ready(function($) {
 
 });
 
+function checkIfOkay(data) {
+
+    var okay = true;
+
+    $.each(data, function( index, value ) {
+
+
+    });
+
+
+}
 
 function priceMaipulation(price, data, spanForPrice, spanForTotalPrice,minimumOrder){
 

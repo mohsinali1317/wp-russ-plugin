@@ -15,55 +15,47 @@
       <file leaf-file-name="init.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/init.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="505">
-              <caret line="51" column="0" lean-forward="true" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+            <state relative-caret-position="612">
+              <caret line="71" column="43" lean-forward="false" selection-start-line="71" selection-start-column="43" selection-end-line="71" selection-end-column="43" />
               <folding>
-                <marker date="1494847860837" expanded="true" signature="344:512" ph="CREATE TABLE... IF" />
-                <marker date="1494847860837" expanded="true" signature="553:889" ph="CREATE TABLE... IF" />
-                <marker date="1494847860837" expanded="true" signature="936:1120" ph="CREATE TABLE... IF" />
-                <marker date="1494847860837" expanded="true" signature="1172:1574" ph="CREATE TABLE... IF" />
-                <marker date="1494847860837" expanded="true" signature="1617:1885" ph="CREATE TABLE... wp_russ_order" />
-                <marker date="1494847860837" expanded="true" signature="1937:2185" ph="CREATE TABLE... IF" />
-                <marker date="1494847860837" expanded="true" signature="1937:4049" ph="CREATE TABLE... IF" />
+                <marker date="1495456366973" expanded="true" signature="344:512" ph="CREATE TABLE... IF" />
+                <marker date="1495456366973" expanded="true" signature="553:889" ph="CREATE TABLE... IF" />
+                <marker date="1495456366973" expanded="true" signature="936:1120" ph="CREATE TABLE... IF" />
+                <marker date="1495456366973" expanded="true" signature="1167:1351" ph="CREATE TABLE... IF" />
+                <marker date="1495456366973" expanded="true" signature="1403:1805" ph="CREATE TABLE... IF" />
+                <marker date="1495456366973" expanded="true" signature="1848:2116" ph="CREATE TABLE... wp_russ_order" />
+                <marker date="1495456366973" expanded="true" signature="2168:2416" ph="CREATE TABLE... IF" />
+                <marker date="1495456366973" expanded="true" signature="2168:4565" ph="CREATE TABLE... IF" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="russ-client.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/russ-client.php">
+      <file leaf-file-name="russ-add-item-image.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/russ-add-item-image.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="577">
-              <caret line="228" column="9" lean-forward="false" selection-start-line="228" selection-start-column="9" selection-end-line="228" selection-end-column="9" />
+            <state relative-caret-position="349">
+              <caret line="28" column="43" lean-forward="false" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
               <folding>
-                <element signature="e#1853#6121#0#HTML" expanded="false" />
-                <element signature="e#6158#6179#0#HTML" expanded="true" />
-                <element signature="e#6134#8108#0#HTML" expanded="false" />
-                <element signature="e#7828#7850#0#HTML" expanded="true" />
-                <element signature="e#8144#8165#0#HTML" expanded="true" />
-                <element signature="e#8121#8283#0#HTML" expanded="false" />
-                <element signature="n#prefix_admin_add_order#0;n#!!top" expanded="false" />
-                <marker date="1494921416138" expanded="true" signature="1054:1068" ph="SELECT * fro... ${$table_items}" />
-                <marker date="1494921416138" expanded="true" signature="1054:1081" ph="SELECT * fro... ${$table_items}" />
-                <marker date="1494921416138" expanded="true" signature="1054:1092" ph="SELECT * fro... ${$table_items}" />
-                <marker date="1494921416138" expanded="true" signature="1054:1098" ph="SELECT * fro... ${$table_items}" />
-                <marker date="1494921416138" expanded="true" signature="1134:1148" ph="SELECT * fro... ${$table_items}" />
-                <marker date="1494921416138" expanded="true" signature="1134:1160" ph="SELECT * fro... ${$table_items}" />
-                <marker date="1494921416138" expanded="true" signature="1134:1162" ph="SELECT * fro... ${$table_items}" />
-                <marker date="1494921416138" expanded="true" signature="1286:1342" ph="SELECT Color... ${$table_item_colors}" />
-                <marker date="1494921416138" expanded="true" signature="1529:1568" ph="SELECT * fro... ${$table_colors}" />
-                <marker date="1494921416138" expanded="true" signature="5648:5701" ph="..." />
+                <element signature="e#6#88#0#PHP" expanded="true" />
+                <marker date="1495457049640" expanded="true" signature="1012:1241" ph="..." />
+                <marker date="1495457049640" expanded="true" signature="1216:1241" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="client.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/client.js">
+      <file leaf-file-name="russ-item-list.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/russ-item-list.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="511">
-              <caret line="230" column="0" lean-forward="true" selection-start-line="230" selection-start-column="0" selection-end-line="230" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="723">
+              <caret line="85" column="90" lean-forward="false" selection-start-line="85" selection-start-column="71" selection-end-line="85" selection-end-column="90" />
+              <folding>
+                <marker date="1495438545062" expanded="true" signature="458:472" ph="SELECT * fro... ${$table_name}" />
+                <marker date="1495438545062" expanded="true" signature="1641:1655" ph="SELECT * fro... ${$table_name}" />
+                <marker date="1495438545062" expanded="true" signature="3466:3527" ph="SELECT Color... ${$table_name_item_colors}" />
+                <marker date="1495438545062" expanded="true" signature="3671:3718" ph="SELECT Name ${$table_name_colors}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -82,9 +74,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/init.php" />
         <option value="$PROJECT_DIR$/client/client.js" />
         <option value="$PROJECT_DIR$/client/russ-client.php" />
+        <option value="$PROJECT_DIR$/russ-item-list.php" />
+        <option value="$PROJECT_DIR$/init.php" />
+        <option value="$PROJECT_DIR$/russ-add-item-image.php" />
       </list>
     </option>
   </component>
@@ -127,20 +121,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="crondale-russ-plugin" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crondale-russ-plugin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crondale-russ-plugin" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -237,18 +217,18 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1494572496853</updated>
-      <workItem from="1494572498544" duration="26039000" />
+      <workItem from="1494572498544" duration="36127000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26039000" />
+    <option name="totallyTimeSpent" value="36127000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18020834" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18020834" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -266,25 +246,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18020834" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
@@ -307,22 +268,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/init.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="505">
-          <caret line="51" column="0" lean-forward="true" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-          <folding>
-            <marker date="1494847860837" expanded="true" signature="344:512" ph="CREATE TABLE... IF" />
-            <marker date="1494847860837" expanded="true" signature="553:889" ph="CREATE TABLE... IF" />
-            <marker date="1494847860837" expanded="true" signature="936:1120" ph="CREATE TABLE... IF" />
-            <marker date="1494847860837" expanded="true" signature="1172:1574" ph="CREATE TABLE... IF" />
-            <marker date="1494847860837" expanded="true" signature="1617:1885" ph="CREATE TABLE... wp_russ_order" />
-            <marker date="1494847860837" expanded="true" signature="1937:2185" ph="CREATE TABLE... IF" />
-            <marker date="1494847860837" expanded="true" signature="1937:4049" ph="CREATE TABLE... IF" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/russ-create-item.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -335,34 +280,82 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/client.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="230" column="0" lean-forward="true" selection-start-line="230" selection-start-column="0" selection-end-line="230" selection-end-column="0" />
+        <state relative-caret-position="749">
+          <caret line="232" column="3" lean-forward="true" selection-start-line="232" selection-start-column="3" selection-end-line="232" selection-end-column="3" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/russ-client.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="577">
-          <caret line="228" column="9" lean-forward="false" selection-start-line="228" selection-start-column="9" selection-end-line="228" selection-end-column="9" />
+        <state relative-caret-position="425">
+          <caret line="25" column="36" lean-forward="false" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
           <folding>
-            <element signature="e#1853#6121#0#HTML" expanded="false" />
-            <element signature="e#6158#6179#0#HTML" expanded="true" />
-            <element signature="e#6134#8108#0#HTML" expanded="false" />
-            <element signature="e#7828#7850#0#HTML" expanded="true" />
-            <element signature="e#8144#8165#0#HTML" expanded="true" />
-            <element signature="e#8121#8283#0#HTML" expanded="false" />
+            <element signature="n#crondale_russ_shop_client#0;n#!!top" expanded="false" />
+            <element signature="e#6062#6083#0#HTML" expanded="true" />
+            <element signature="e#7732#7754#0#HTML" expanded="true" />
+            <element signature="e#8048#8069#0#HTML" expanded="true" />
             <element signature="n#prefix_admin_add_order#0;n#!!top" expanded="false" />
-            <marker date="1494921416138" expanded="true" signature="1054:1068" ph="SELECT * fro... ${$table_items}" />
-            <marker date="1494921416138" expanded="true" signature="1054:1081" ph="SELECT * fro... ${$table_items}" />
-            <marker date="1494921416138" expanded="true" signature="1054:1092" ph="SELECT * fro... ${$table_items}" />
-            <marker date="1494921416138" expanded="true" signature="1054:1098" ph="SELECT * fro... ${$table_items}" />
-            <marker date="1494921416138" expanded="true" signature="1134:1148" ph="SELECT * fro... ${$table_items}" />
-            <marker date="1494921416138" expanded="true" signature="1134:1160" ph="SELECT * fro... ${$table_items}" />
-            <marker date="1494921416138" expanded="true" signature="1134:1162" ph="SELECT * fro... ${$table_items}" />
-            <marker date="1494921416138" expanded="true" signature="1286:1342" ph="SELECT Color... ${$table_item_colors}" />
-            <marker date="1494921416138" expanded="true" signature="1529:1568" ph="SELECT * fro... ${$table_colors}" />
-            <marker date="1494921416138" expanded="true" signature="5648:5701" ph="..." />
+            <marker date="1495438501860" expanded="true" signature="1038:1052" ph="SELECT * fro... ${$table_items}" />
+            <marker date="1495438501860" expanded="true" signature="1038:1064" ph="SELECT * fro... ${$table_items}" />
+            <marker date="1495438501860" expanded="true" signature="1038:1066" ph="SELECT * fro... ${$table_items}" />
+            <marker date="1495438501860" expanded="true" signature="1190:1246" ph="SELECT Color... ${$table_item_colors}" />
+            <marker date="1495438501860" expanded="true" signature="1433:1472" ph="SELECT * fro... ${$table_colors}" />
+            <marker date="1495438501860" expanded="true" signature="5552:5605" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/russ-update-color.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="57" selection-end-column="1" />
+          <folding>
+            <element signature="n#russ_update_color#0;n#!!top" expanded="false" />
+            <marker date="1494402700502" expanded="true" signature="542:579" ph="DELETE FROM " />
+            <marker date="1494402700502" expanded="true" signature="686:729" ph="SELECT Id,Na... ${$table_name}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/init.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="71" column="43" lean-forward="false" selection-start-line="71" selection-start-column="43" selection-end-line="71" selection-end-column="43" />
+          <folding>
+            <marker date="1495456366973" expanded="true" signature="344:512" ph="CREATE TABLE... IF" />
+            <marker date="1495456366973" expanded="true" signature="553:889" ph="CREATE TABLE... IF" />
+            <marker date="1495456366973" expanded="true" signature="936:1120" ph="CREATE TABLE... IF" />
+            <marker date="1495456366973" expanded="true" signature="1167:1351" ph="CREATE TABLE... IF" />
+            <marker date="1495456366973" expanded="true" signature="1403:1805" ph="CREATE TABLE... IF" />
+            <marker date="1495456366973" expanded="true" signature="1848:2116" ph="CREATE TABLE... wp_russ_order" />
+            <marker date="1495456366973" expanded="true" signature="2168:2416" ph="CREATE TABLE... IF" />
+            <marker date="1495456366973" expanded="true" signature="2168:4565" ph="CREATE TABLE... IF" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/russ-item-list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="723">
+          <caret line="85" column="90" lean-forward="false" selection-start-line="85" selection-start-column="71" selection-end-line="85" selection-end-column="90" />
+          <folding>
+            <marker date="1495438545062" expanded="true" signature="458:472" ph="SELECT * fro... ${$table_name}" />
+            <marker date="1495438545062" expanded="true" signature="1641:1655" ph="SELECT * fro... ${$table_name}" />
+            <marker date="1495438545062" expanded="true" signature="3466:3527" ph="SELECT Color... ${$table_name_item_colors}" />
+            <marker date="1495438545062" expanded="true" signature="3671:3718" ph="SELECT Name ${$table_name_colors}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/russ-add-item-image.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="28" column="43" lean-forward="false" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
+          <folding>
+            <element signature="e#6#88#0#PHP" expanded="true" />
+            <marker date="1495457049640" expanded="true" signature="1012:1241" ph="..." />
+            <marker date="1495457049640" expanded="true" signature="1216:1241" ph="..." />
           </folding>
         </state>
       </provider>

@@ -35,6 +35,13 @@ function crondale_options_install() {
 	) ENGINE = InnoDB  DEFAULT CHARSET=utf8;
 	";
 
+    $create_item_image_table_query = "
+	CREATE TABLE IF NOT EXISTS `{$table_name}item_images` (
+	`Item_Id` INT NOT NULL , `Image_Id` INT NOT NULL,
+	PRIMARY KEY (`Item_Id`, `Image_Id`)
+	) ENGINE = InnoDB  DEFAULT CHARSET=utf8;
+	";
+
 
     $create_order_receiver_table_query = "
 	CREATE TABLE IF NOT EXISTS `{$table_name}order_receiver_info` (
@@ -62,6 +69,9 @@ function crondale_options_install() {
     dbDelta( $create_order_receiver_table_query );
     dbDelta( $create_order_table_query );
     dbDelta( $create_order_details_table_query );
+    dbDelta( $create_item_image_table_query );
+
+
 
 }
 
@@ -103,6 +113,14 @@ function crondale_modifymenu() {
         'russ_update_color', //menu slug
         'russ_update_color'); //function
 
+
+    add_submenu_page(null, //parent slug
+        'Add Image', //page title
+        'Add Image', //menu title
+        'manage_options', //capability
+        'russ_item_add_image', //menu slug
+        'russ_item_add_image'); //function
+
 }
 
 
@@ -129,6 +147,7 @@ require_once(ROOTDIR1 . 'russ-item-list.php');
 require_once(ROOTDIR1 . 'russ-create-color.php');
 require_once(ROOTDIR1 . 'russ-update-color.php');
 require_once(ROOTDIR1 . 'russ-create-item.php');
+require_once(ROOTDIR1 . 'russ-add-item-image.php');
 
 require_once(ROOTDIR1 . 'client/russ-client.php');
 

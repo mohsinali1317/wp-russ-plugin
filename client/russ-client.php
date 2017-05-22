@@ -32,7 +32,6 @@ function crondale_russ_shop_client()
 
     $html = "";
 
-    //$items = $wpdb->get_results($wpdb->prepare("SELECT * from $table_items where Id=%s", 1));
 
     $items = $wpdb->get_results("SELECT * from $table_items");
 
@@ -226,7 +225,7 @@ function crondale_russ_shop_client()
             </div>
         </div>
 
-        <hr>
+        </hr>
 
         <?php
     }

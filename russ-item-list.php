@@ -55,6 +55,8 @@ function russ_item_list() {
                     <th class="manage-column ss-list-width">Has front back options?</th>
                     <th class="manage-column ss-list-width">Extra logo option</th>
                     <th class="manage-column ss-list-width">Colors</th>
+                    <th class="manage-column ss-list-width">Actions</th>
+
                     <!-- <th>&nbsp;</th> -->
                 </tr>
                 <?php foreach ($rows as $row) { ?>
@@ -75,13 +77,13 @@ function russ_item_list() {
                         foreach( $res as $key => $row1) {
                             $res1 = $wpdb->get_results($wpdb->prepare("SELECT Name from $table_name_colors where Id=%s", $row1->Color_Id));
                             foreach ($res1 as $key => $value) {
-                                                     # code...
                                 echo $value->Name . ", ";
                             }                         
                         }
                         ?>
                     </td>
-                    <!-- <td><a href="<?php echo admin_url('admin.php?page=russ_update_color&id=' . $row->Id); ?>">Update</a></td>  -->
+
+                     <td><a href="<?php echo admin_url('admin.php?page=russ_item_add_image&id=' . $row->Id); ?>">Add Images</a></td>
                 </tr>
                 <?php } ?>
             </table>
