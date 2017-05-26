@@ -104,6 +104,13 @@ function crondale_modifymenu() {
         'russ_create_item', //menu slug
         'russ_create_item'); //function
 
+    add_submenu_page('russ_item_list', //parent slug
+        'Orders', //page title
+        'Orders', //menu title
+        'manage_options', //capability
+        'russ_orders', //menu slug
+        'russ_orders'); //function
+
 
     //this submenu is HIDDEN, however, we need to add it anyways
     add_submenu_page(null, //parent slug
@@ -128,6 +135,16 @@ function crondale_modifymenu() {
         'manage_options', //capability
         'russ_item_image_delete', //menu slug
         'russ_item_image_delete'); //function
+
+    add_submenu_page(null, //parent slug
+        'Order Details', //page title
+        'Order Details', //menu title
+        'manage_options', //capability
+        'russ_order_details', //menu slug
+        'russ_order_details'); //function
+
+
+
 
 
 
@@ -159,6 +176,8 @@ require_once(ROOTDIR1 . 'russ-update-color.php');
 require_once(ROOTDIR1 . 'russ-create-item.php');
 require_once(ROOTDIR1 . 'russ-add-item-image.php');
 require_once(ROOTDIR1 . 'russ-item-image-delete.php');
+require_once(ROOTDIR1 . 'russ-orders.php');
+require_once(ROOTDIR1 . 'russ-orders-details.php');
 
 require_once(ROOTDIR1 . 'client/russ-client.php');
 
