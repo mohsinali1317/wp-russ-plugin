@@ -121,6 +121,16 @@ function crondale_modifymenu() {
         'russ_item_add_image', //menu slug
         'russ_item_add_image'); //function
 
+
+    add_submenu_page(null, //parent slug
+        'Delete Image', //page title
+        'Delete Image', //menu title
+        'manage_options', //capability
+        'russ_item_image_delete', //menu slug
+        'russ_item_image_delete'); //function
+
+
+
 }
 
 
@@ -148,6 +158,7 @@ require_once(ROOTDIR1 . 'russ-create-color.php');
 require_once(ROOTDIR1 . 'russ-update-color.php');
 require_once(ROOTDIR1 . 'russ-create-item.php');
 require_once(ROOTDIR1 . 'russ-add-item-image.php');
+require_once(ROOTDIR1 . 'russ-item-image-delete.php');
 
 require_once(ROOTDIR1 . 'client/russ-client.php');
 

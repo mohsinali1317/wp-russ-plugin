@@ -15,32 +15,46 @@
       <file leaf-file-name="init.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/init.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="71" column="43" lean-forward="false" selection-start-line="71" selection-start-column="43" selection-end-line="71" selection-end-column="43" />
+            <state relative-caret-position="828">
+              <caret line="160" column="51" lean-forward="false" selection-start-line="160" selection-start-column="25" selection-end-line="160" selection-end-column="51" />
               <folding>
-                <marker date="1495456366973" expanded="true" signature="344:512" ph="CREATE TABLE... IF" />
-                <marker date="1495456366973" expanded="true" signature="553:889" ph="CREATE TABLE... IF" />
-                <marker date="1495456366973" expanded="true" signature="936:1120" ph="CREATE TABLE... IF" />
-                <marker date="1495456366973" expanded="true" signature="1167:1351" ph="CREATE TABLE... IF" />
-                <marker date="1495456366973" expanded="true" signature="1403:1805" ph="CREATE TABLE... IF" />
-                <marker date="1495456366973" expanded="true" signature="1848:2116" ph="CREATE TABLE... wp_russ_order" />
-                <marker date="1495456366973" expanded="true" signature="2168:2416" ph="CREATE TABLE... IF" />
-                <marker date="1495456366973" expanded="true" signature="2168:4565" ph="CREATE TABLE... IF" />
+                <marker date="1495780552098" expanded="true" signature="344:512" ph="CREATE TABLE... IF" />
+                <marker date="1495780552098" expanded="true" signature="553:889" ph="CREATE TABLE... IF" />
+                <marker date="1495780552098" expanded="true" signature="936:1120" ph="CREATE TABLE... IF" />
+                <marker date="1495780552098" expanded="true" signature="1167:1351" ph="CREATE TABLE... IF" />
+                <marker date="1495780552098" expanded="true" signature="1403:1805" ph="CREATE TABLE... IF" />
+                <marker date="1495780552098" expanded="true" signature="1848:2116" ph="CREATE TABLE... wp_russ_order" />
+                <marker date="1495780552098" expanded="true" signature="2168:2416" ph="CREATE TABLE... IF" />
+                <marker date="1495780552098" expanded="true" signature="2168:4815" ph="CREATE TABLE... IF" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="russ-add-item-image.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/russ-add-item-image.php">
+      <file leaf-file-name="russ-item-image-delete.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/russ-item-image-delete.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+            <state relative-caret-position="595">
+              <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
               <folding>
                 <element signature="e#6#88#0#PHP" expanded="true" />
-                <marker date="1495780203836" expanded="true" signature="1133:1171" ph="..." />
-                <marker date="1495780203836" expanded="true" signature="1806:1861" ph="SELECT Image... ${$table_name}" />
-                <marker date="1495780203836" expanded="true" signature="1806:1862" ph="SELECT Image... ${$table_item_images}" />
+                <marker date="1495780865811" expanded="true" signature="388:436" ph="DELETE FROM " />
+                <marker date="1495780865811" expanded="true" signature="388:455" ph="DELETE FROM " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="russ-add-item-image.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/russ-add-item-image.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="28" lean-forward="false" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="28" />
+              <folding>
+                <element signature="e#6#88#0#PHP" expanded="true" />
+                <marker date="1495780501105" expanded="true" signature="1133:1171" ph="..." />
+                <marker date="1495780501105" expanded="true" signature="1806:1861" ph="SELECT Image... ${$table_name}" />
+                <marker date="1495780501105" expanded="true" signature="1806:1862" ph="SELECT Image... ${$table_item_images}" />
               </folding>
             </state>
           </provider>
@@ -49,8 +63,8 @@
       <file leaf-file-name="russ-update-color.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/russ-update-color.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="31" column="7" lean-forward="false" selection-start-line="31" selection-start-column="7" selection-end-line="33" selection-end-column="9" />
+            <state relative-caret-position="357">
+              <caret line="21" column="83" lean-forward="true" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="83" />
               <folding>
                 <marker date="1495543448727" expanded="true" signature="542:579" ph="DELETE FROM " />
                 <marker date="1495543448727" expanded="true" signature="686:729" ph="SELECT Id,Na... ${$table_name}" />
@@ -62,8 +76,8 @@
       <file leaf-file-name="russ-create-color.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/russ-create-color.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="10" lean-forward="true" selection-start-line="8" selection-start-column="7" selection-end-line="12" selection-end-column="10" />
+            <state relative-caret-position="238">
+              <caret line="14" column="8" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="64" />
               <folding />
             </state>
           </provider>
@@ -73,7 +87,7 @@
         <entry file="file://$PROJECT_DIR$/russ-item-list.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="723">
-              <caret line="85" column="90" lean-forward="false" selection-start-line="85" selection-start-column="71" selection-end-line="85" selection-end-column="90" />
+              <caret line="85" column="127" lean-forward="false" selection-start-line="85" selection-start-column="25" selection-end-line="85" selection-end-column="127" />
               <folding>
                 <marker date="1495438545062" expanded="true" signature="458:472" ph="SELECT * fro... ${$table_name}" />
                 <marker date="1495438545062" expanded="true" signature="1641:1655" ph="SELECT * fro... ${$table_name}" />
@@ -101,10 +115,11 @@
         <option value="$PROJECT_DIR$/client/client.js" />
         <option value="$PROJECT_DIR$/client/russ-client.php" />
         <option value="$PROJECT_DIR$/russ-item-list.php" />
-        <option value="$PROJECT_DIR$/init.php" />
         <option value="$PROJECT_DIR$/russ-update-color.php" />
         <option value="$PROJECT_DIR$/russ-create-color.php" />
         <option value="$PROJECT_DIR$/russ-add-item-image.php" />
+        <option value="$PROJECT_DIR$/init.php" />
+        <option value="$PROJECT_DIR$/russ-item-image-delete.php" />
       </list>
     </option>
   </component>
@@ -243,12 +258,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1494572496853</updated>
-      <workItem from="1494572498544" duration="44316000" />
+      <workItem from="1494572498544" duration="44995000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44316000" />
+    <option name="totallyTimeSpent" value="44995000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
@@ -324,27 +339,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/init.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="71" column="43" lean-forward="false" selection-start-line="71" selection-start-column="43" selection-end-line="71" selection-end-column="43" />
-          <folding>
-            <marker date="1495456366973" expanded="true" signature="344:512" ph="CREATE TABLE... IF" />
-            <marker date="1495456366973" expanded="true" signature="553:889" ph="CREATE TABLE... IF" />
-            <marker date="1495456366973" expanded="true" signature="936:1120" ph="CREATE TABLE... IF" />
-            <marker date="1495456366973" expanded="true" signature="1167:1351" ph="CREATE TABLE... IF" />
-            <marker date="1495456366973" expanded="true" signature="1403:1805" ph="CREATE TABLE... IF" />
-            <marker date="1495456366973" expanded="true" signature="1848:2116" ph="CREATE TABLE... wp_russ_order" />
-            <marker date="1495456366973" expanded="true" signature="2168:2416" ph="CREATE TABLE... IF" />
-            <marker date="1495456366973" expanded="true" signature="2168:4565" ph="CREATE TABLE... IF" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/russ-item-list.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="723">
-          <caret line="85" column="90" lean-forward="false" selection-start-line="85" selection-start-column="71" selection-end-line="85" selection-end-column="90" />
+          <caret line="85" column="127" lean-forward="false" selection-start-line="85" selection-start-column="25" selection-end-line="85" selection-end-column="127" />
           <folding>
             <marker date="1495438545062" expanded="true" signature="458:472" ph="SELECT * fro... ${$table_name}" />
             <marker date="1495438545062" expanded="true" signature="1641:1655" ph="SELECT * fro... ${$table_name}" />
@@ -354,18 +352,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/russ-create-color.php">
+    <entry file="file://$PROJECT_DIR$/init.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="10" lean-forward="true" selection-start-line="8" selection-start-column="7" selection-end-line="12" selection-end-column="10" />
-          <folding />
+        <state relative-caret-position="828">
+          <caret line="160" column="51" lean-forward="false" selection-start-line="160" selection-start-column="25" selection-end-line="160" selection-end-column="51" />
+          <folding>
+            <marker date="1495780552098" expanded="true" signature="344:512" ph="CREATE TABLE... IF" />
+            <marker date="1495780552098" expanded="true" signature="553:889" ph="CREATE TABLE... IF" />
+            <marker date="1495780552098" expanded="true" signature="936:1120" ph="CREATE TABLE... IF" />
+            <marker date="1495780552098" expanded="true" signature="1167:1351" ph="CREATE TABLE... IF" />
+            <marker date="1495780552098" expanded="true" signature="1403:1805" ph="CREATE TABLE... IF" />
+            <marker date="1495780552098" expanded="true" signature="1848:2116" ph="CREATE TABLE... wp_russ_order" />
+            <marker date="1495780552098" expanded="true" signature="2168:2416" ph="CREATE TABLE... IF" />
+            <marker date="1495780552098" expanded="true" signature="2168:4815" ph="CREATE TABLE... IF" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/russ-update-color.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="7" lean-forward="false" selection-start-line="31" selection-start-column="7" selection-end-line="33" selection-end-column="9" />
+        <state relative-caret-position="357">
+          <caret line="21" column="83" lean-forward="true" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="83" />
           <folding>
             <marker date="1495543448727" expanded="true" signature="542:579" ph="DELETE FROM " />
             <marker date="1495543448727" expanded="true" signature="686:729" ph="SELECT Id,Na... ${$table_name}" />
@@ -373,15 +380,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/russ-create-color.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="8" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/russ-add-item-image.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+        <state relative-caret-position="136">
+          <caret line="8" column="28" lean-forward="false" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="28" />
           <folding>
             <element signature="e#6#88#0#PHP" expanded="true" />
-            <marker date="1495780203836" expanded="true" signature="1133:1171" ph="..." />
-            <marker date="1495780203836" expanded="true" signature="1806:1861" ph="SELECT Image... ${$table_name}" />
-            <marker date="1495780203836" expanded="true" signature="1806:1862" ph="SELECT Image... ${$table_item_images}" />
+            <marker date="1495780501105" expanded="true" signature="1133:1171" ph="..." />
+            <marker date="1495780501105" expanded="true" signature="1806:1861" ph="SELECT Image... ${$table_name}" />
+            <marker date="1495780501105" expanded="true" signature="1806:1862" ph="SELECT Image... ${$table_item_images}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/russ-item-image-delete.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding>
+            <element signature="e#6#88#0#PHP" expanded="true" />
+            <marker date="1495780865811" expanded="true" signature="388:436" ph="DELETE FROM " />
+            <marker date="1495780865811" expanded="true" signature="388:455" ph="DELETE FROM " />
           </folding>
         </state>
       </provider>

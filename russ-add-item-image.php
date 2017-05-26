@@ -75,7 +75,13 @@ function russ_item_add_image() {
     foreach ($itemImages as $s) {
      ?>
 
-        <img src="<?php echo wp_get_attachment_image_url($s->Image_Id); ?>" />
+        <div class="itemImage">
+
+            <img src="<?php echo wp_get_attachment_image_url($s->Image_Id); ?>" />
+            <span><?php echo get_the_excerpt($s->Image_Id);?></span>
+            <a href="<?php echo admin_url('admin.php?page=russ_item_image_delete&itemId=' . $item_id . '&imageId=' . $s->Image_Id); ?>">Delete Image</a>
+
+        </div>
         <?php
     }
 
