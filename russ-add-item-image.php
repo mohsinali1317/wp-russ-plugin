@@ -9,11 +9,9 @@
 function russ_item_add_image() {
 
     global $wpdb;
-    $table_name = $wpdb->prefix . "russ_colors";
+    $table_item_images = $wpdb->prefix . "russ_item_images";
 
     $item_id = $_GET["id"];
-
-    //echo $item_id;
 
     if(isset($_FILES['image'])){
 
@@ -31,34 +29,56 @@ function russ_item_add_image() {
 
         $uploaded=media_handle_upload('image', 0, $data);
 
-        $attachment_url = wp_get_attachment_url($uploaded);
-        echo $attachment_url;
-
-
         // Error checking using WP functions
         if(is_wp_error($uploaded)){
             echo "Error uploading file: " . $uploaded->get_error_message();
         }else{
             echo "File upload successful!";
+
+            $res = $wpdb->insert(
+                $table_item_images, //table
+                array('Item_id' => $item_id, 'Image_Id' => $uploaded), //data
+                array('%d' , '%d') //data format
+            );
+
         }
     }
+
 
 
 ?>
 
     <div class="wrap">
-        <h2>Add Item</h2>
+        <h2>Add Image for item</h2>
+        <form method="post" enctype="multipart/form-data">
 
-        <h2>Upload a File</h2>
-        <!-- Form to handle the upload - The enctype value here is very important -->
-        <form  method="post" enctype="multipart/form-data">
-            <input type='file' id='image' name='image' accept="image/*" />
-            <input type='text' id='imageCaption' name='imageCaption' placeholder="Image caption" />
+            <div class="form-group">
+                <label for="image">File input</label>
+                <input type="file" id='image' name='image' accept="image/*">
+            </div>
+            <div class="form-group">
+                <label>
+                   Add Image caption <input type='text' id='imageCaption' name='imageCaption'  class="form-control" placeholder="Image caption" />
+                </label>
+            </div>
             <?php submit_button('Upload') ?>
         </form>
-
     </div>
 
 
 <?php
-    } ?>
+
+
+
+    $itemImages = $wpdb->get_results($wpdb->prepare("SELECT Image_Id from $table_item_images where Item_Id=%d", $item_id));
+
+    foreach ($itemImages as $s) {
+     ?>
+
+        <img src="<?php echo wp_get_attachment_image_url($s->Image_Id); ?>" />
+        <?php
+    }
+
+
+
+} ?>

@@ -34,13 +34,37 @@
       <file leaf-file-name="russ-add-item-image.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/russ-add-item-image.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="28" column="43" lean-forward="false" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
+            <state relative-caret-position="425">
+              <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
               <folding>
                 <element signature="e#6#88#0#PHP" expanded="true" />
-                <marker date="1495457049640" expanded="true" signature="1012:1241" ph="..." />
-                <marker date="1495457049640" expanded="true" signature="1216:1241" ph="..." />
+                <marker date="1495780203836" expanded="true" signature="1133:1171" ph="..." />
+                <marker date="1495780203836" expanded="true" signature="1806:1861" ph="SELECT Image... ${$table_name}" />
+                <marker date="1495780203836" expanded="true" signature="1806:1862" ph="SELECT Image... ${$table_item_images}" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="russ-update-color.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/russ-update-color.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="527">
+              <caret line="31" column="7" lean-forward="false" selection-start-line="31" selection-start-column="7" selection-end-line="33" selection-end-column="9" />
+              <folding>
+                <marker date="1495543448727" expanded="true" signature="542:579" ph="DELETE FROM " />
+                <marker date="1495543448727" expanded="true" signature="686:729" ph="SELECT Id,Na... ${$table_name}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="russ-create-color.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/russ-create-color.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="10" lean-forward="true" selection-start-line="8" selection-start-column="7" selection-end-line="12" selection-end-column="10" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -78,6 +102,8 @@
         <option value="$PROJECT_DIR$/client/russ-client.php" />
         <option value="$PROJECT_DIR$/russ-item-list.php" />
         <option value="$PROJECT_DIR$/init.php" />
+        <option value="$PROJECT_DIR$/russ-update-color.php" />
+        <option value="$PROJECT_DIR$/russ-create-color.php" />
         <option value="$PROJECT_DIR$/russ-add-item-image.php" />
       </list>
     </option>
@@ -217,12 +243,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1494572496853</updated>
-      <workItem from="1494572498544" duration="36127000" />
+      <workItem from="1494572498544" duration="44316000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36127000" />
+    <option name="totallyTimeSpent" value="44316000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
@@ -260,14 +286,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/russ-create-color.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/russ-create-item.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -306,18 +324,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/russ-update-color.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="57" selection-end-column="1" />
-          <folding>
-            <element signature="n#russ_update_color#0;n#!!top" expanded="false" />
-            <marker date="1494402700502" expanded="true" signature="542:579" ph="DELETE FROM " />
-            <marker date="1494402700502" expanded="true" signature="686:729" ph="SELECT Id,Na... ${$table_name}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/init.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
@@ -348,14 +354,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/russ-create-color.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="10" lean-forward="true" selection-start-line="8" selection-start-column="7" selection-end-line="12" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/russ-update-color.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="7" lean-forward="false" selection-start-line="31" selection-start-column="7" selection-end-line="33" selection-end-column="9" />
+          <folding>
+            <marker date="1495543448727" expanded="true" signature="542:579" ph="DELETE FROM " />
+            <marker date="1495543448727" expanded="true" signature="686:729" ph="SELECT Id,Na... ${$table_name}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/russ-add-item-image.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="28" column="43" lean-forward="false" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
+        <state relative-caret-position="425">
+          <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
           <folding>
             <element signature="e#6#88#0#PHP" expanded="true" />
-            <marker date="1495457049640" expanded="true" signature="1012:1241" ph="..." />
-            <marker date="1495457049640" expanded="true" signature="1216:1241" ph="..." />
+            <marker date="1495780203836" expanded="true" signature="1133:1171" ph="..." />
+            <marker date="1495780203836" expanded="true" signature="1806:1861" ph="SELECT Image... ${$table_name}" />
+            <marker date="1495780203836" expanded="true" signature="1806:1862" ph="SELECT Image... ${$table_item_images}" />
           </folding>
         </state>
       </provider>

@@ -27,6 +27,8 @@ function russ_update_color() {
         $colors = $wpdb->get_results($wpdb->prepare("SELECT Id,Name from $table_name where Id=%s", $id));
 
 
+
+
         foreach ($colors as $s) {
             $name = $s->Name;
         }
@@ -55,4 +57,11 @@ function russ_update_color() {
 
     </div>
     <?php
+
+
+
+    
+
+
+
 }

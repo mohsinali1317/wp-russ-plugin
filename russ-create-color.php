@@ -11,7 +11,7 @@ function russ_create_color() {
                 array('Name' => $name), //data
                 array('%s') //data format			
         );
-        $message.="Color inserted";
+        $message ="Color inserted";
         wp_redirect(admin_url('admin.php?page=russ_item_list'));
     }
     ?>
