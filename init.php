@@ -166,8 +166,8 @@ add_action( 'wp_enqueue_scripts', 'my_enqueue_client' );
 
 //add_action( 'admin_post_add_order', 'prefix_admin_add_order' );
 
-add_action('wp_ajax_test_response', 'text_ajax_process_request');
-add_action('wp_ajax_nopriv_test_response', 'text_ajax_process_request' );
+add_action('wp_ajax_add_order', 'add_order');
+add_action('wp_ajax_nopriv_add_order', 'add_order' );
 
 add_shortcode("crondale_russ_shop", "crondale_russ_shop_client");
 

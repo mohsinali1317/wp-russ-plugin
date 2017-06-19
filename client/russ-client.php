@@ -291,7 +291,7 @@ function crondale_russ_shop_client()
 
 
 
-function text_ajax_process_request() {
+function add_order() {
     // Handle request then generate response using echo or leaving PHP and using HTML
 
     if(isset($_REQUEST['parameters']) && isset($_REQUEST['orderAddress']) && isset($_REQUEST['order'])){

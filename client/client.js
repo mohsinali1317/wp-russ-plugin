@@ -224,7 +224,7 @@ jQuery(document).ready(function($) {
         }
 
     var data = {
-        action: 'test_response',
+        action: 'add_order',
         parameters:parameters,
         orderAddress : orderAddress,
         order : order
