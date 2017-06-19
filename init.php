@@ -6,9 +6,11 @@ Version: 0.0.1
 Author: Crondale
 */
 
-register_activation_hook(__FILE__, 'crondale_options_install');
+register_activation_hook(__FILE__, 'russ_shop_activate');
+register_deactivation_hook( __FILE__, 'russ_shop_deactivate' );
+register_uninstall_hook( __FILE__, 'russ_shop_uninstall' );
 
-function crondale_options_install() {
+function russ_shop_activate() {
 
     define( 'WP_DEBUG', true );
 
@@ -17,28 +19,28 @@ function crondale_options_install() {
 
     $create_color_table_query = "
 	CREATE TABLE IF NOT EXISTS `{$table_name}colors` (
-	`Id` INT NOT NULL AUTO_INCREMENT ,
-	`Name` text NOT NULL,
-	PRIMARY KEY (Id)
+	`id` INT NOT NULL AUTO_INCREMENT ,
+	`name` text NOT NULL,
+	PRIMARY KEY (id)
 	) ENGINE = InnoDB  DEFAULT CHARSET=utf8;
 	";
 
     $create_item_table_query = "
 	CREATE TABLE IF NOT EXISTS `{$table_name}items` (
-	`Id` INT NOT NULL AUTO_INCREMENT , `Name` VARCHAR(255) NOT NULL , `Description` TEXT NOT NULL , `Price`  FLOAT(11) NOT NULL , `MinimumOrder` SMALLINT NOT NULL , `FrontBackOption` BOOLEAN NOT NULL , `ExtraLogo` BOOLEAN NOT NULL , PRIMARY KEY (`Id`)) ENGINE = InnoDB DEFAULT CHARSET=utf8;
+	`id` INT NOT NULL AUTO_INCREMENT , `name` VARCHAR(255) NOT NULL , `description` TEXT NOT NULL , `price`  FLOAT(11) NOT NULL , `minimumOrder` SMALLINT NOT NULL , `frontBackOption` BOOLEAN NOT NULL , `extraLogo` BOOLEAN NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB DEFAULT CHARSET=utf8;
 	";
 
     $create_item_color_table_query = "
 	CREATE TABLE IF NOT EXISTS `{$table_name}item_colors` (
-	`Item_Id` INT NOT NULL , `Color_Id` INT NOT NULL,
-	PRIMARY KEY (`Item_Id`, `Color_Id`)
+	`itemId` INT NOT NULL , `colorId` INT NOT NULL,
+	PRIMARY KEY (`itemId`, `colorId`)
 	) ENGINE = InnoDB  DEFAULT CHARSET=utf8;
 	";
 
     $create_item_image_table_query = "
 	CREATE TABLE IF NOT EXISTS `{$table_name}item_images` (
-	`Item_Id` INT NOT NULL , `Image_Id` INT NOT NULL,
-	PRIMARY KEY (`Item_Id`, `Image_Id`)
+	`itemId` INT NOT NULL , `imageId` INT NOT NULL,
+	PRIMARY KEY (`itemId`, `imageId`)
 	) ENGINE = InnoDB  DEFAULT CHARSET=utf8;
 	";
 
@@ -70,14 +72,22 @@ function crondale_options_install() {
     dbDelta( $create_order_table_query );
     dbDelta( $create_order_details_table_query );
     dbDelta( $create_item_image_table_query );
+}
 
 
+function russ_shop_deactivate(){
+
+}
+
+function russ_shop_uninstall()
+{
 
 }
 
 
 //menu items
 add_action('admin_menu','crondale_modifymenu');
+
 function crondale_modifymenu() {
 
     //this is the main item for the menu
@@ -141,15 +151,9 @@ function crondale_modifymenu() {
         'Order Details', //menu title
         'manage_options', //capability
         'russ_order_details', //menu slug
-        'russ_order_details'); //function
-
-
-
-
-
+        'russ_order_details'); //function 
 
 }
-
 
 function my_enqueue($hook) {
     wp_register_style('my-plugin', plugins_url('crondale-russ-plugin/style-admin.css'));
@@ -158,15 +162,14 @@ function my_enqueue($hook) {
 
 
 add_action( 'admin_enqueue_scripts', 'my_enqueue' );
-
 add_action( 'wp_enqueue_scripts', 'my_enqueue_client' );
 
-add_action( 'admin_post_add_order', 'prefix_admin_add_order' );
+//add_action( 'admin_post_add_order', 'prefix_admin_add_order' );
 
-
+add_action('wp_ajax_test_response', 'text_ajax_process_request');
+add_action('wp_ajax_nopriv_test_response', 'text_ajax_process_request' );
 
 add_shortcode("crondale_russ_shop", "crondale_russ_shop_client");
-
 
 define('ROOTDIR1', plugin_dir_path(__FILE__));
 
@@ -177,7 +180,7 @@ require_once(ROOTDIR1 . 'russ-create-item.php');
 require_once(ROOTDIR1 . 'russ-add-item-image.php');
 require_once(ROOTDIR1 . 'russ-item-image-delete.php');
 require_once(ROOTDIR1 . 'russ-orders.php');
-require_once(ROOTDIR1 . 'russ-orders-details.php');
+require_once(ROOTDIR1 . 'russ-orders-details.php'); 
 
 require_once(ROOTDIR1 . 'client/russ-client.php');
 

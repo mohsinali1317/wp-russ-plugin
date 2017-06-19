@@ -37,7 +37,7 @@ function russ_item_add_image() {
 
             $res = $wpdb->insert(
                 $table_item_images, //table
-                array('Item_id' => $item_id, 'Image_Id' => $uploaded), //data
+                array('itemId' => $item_id, 'imageId' => $uploaded), //data
                 array('%d' , '%d') //data format
             );
 
@@ -70,17 +70,15 @@ function russ_item_add_image() {
 
 
 
-    $itemImages = $wpdb->get_results($wpdb->prepare("SELECT Image_Id from $table_item_images where Item_Id=%d", $item_id));
+    $itemImages = $wpdb->get_results($wpdb->prepare("SELECT imageId from $table_item_images where itemId=%d", $item_id));
 
     foreach ($itemImages as $s) {
      ?>
 
         <div class="itemImage">
-
-            <img src="<?php echo wp_get_attachment_image_url($s->Image_Id); ?>" />
-            <span><?php echo get_the_excerpt($s->Image_Id);?></span>
-            <a href="<?php echo admin_url('admin.php?page=russ_item_image_delete&itemId=' . $item_id . '&imageId=' . $s->Image_Id); ?>">Delete Image</a>
-
+            <img src="<?php echo wp_get_attachment_image_url($s->imageId); ?>" />
+            <span><?php echo get_the_excerpt($s->imageId);?></span>
+            <a href="<?php echo admin_url('admin.php?page=russ_item_image_delete&itemId=' . $item_id . '&imageId=' . $s->imageId); ?>">Delete Image</a>
         </div>
         <?php
     }

@@ -11,26 +11,24 @@ function russ_update_color() {
     if (isset($_POST['update'])) {
         $wpdb->update(
                 $table_name, //table
-                array('Name' => $name), //data
-                array('Id' => $id), //where
+                array('name' => $name), //data
+                array('id' => $id), //where
                 array('%s'), //data format
                 array('%s') //where format
         );
     }
 //delete
     else if (isset($_POST['delete'])) {
-        $wpdb->query($wpdb->prepare("DELETE FROM $table_name WHERE Id = %s", $id));
+        $wpdb->query($wpdb->prepare("DELETE FROM $table_name WHERE id = %s", $id));
     } else {//selecting value to update	
 
 
 
-        $colors = $wpdb->get_results($wpdb->prepare("SELECT Id,Name from $table_name where Id=%s", $id));
-
-
+        $colors = $wpdb->get_results($wpdb->prepare("SELECT id,name from $table_name where id=%s", $id));
 
 
         foreach ($colors as $s) {
-            $name = $s->Name;
+            $name = $s->name;
         }
     }
     ?>

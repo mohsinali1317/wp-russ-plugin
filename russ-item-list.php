@@ -24,9 +24,9 @@ function russ_item_list() {
             </tr>
             <?php foreach ($rows as $row) { ?>
             <tr>
-                <td class="manage-column ss-list-width"><?php echo $row->Id; ?></td>
-                <td class="manage-column ss-list-width"><?php echo $row->Name; ?></td>
-                <td><a href="<?php echo admin_url('admin.php?page=russ_update_color&id=' . $row->Id); ?>">Update</a></td> 
+                <td class="manage-column ss-list-width"><?php echo $row->id; ?></td>
+                <td class="manage-column ss-list-width"><?php echo $row->name; ?></td>
+                <td><a href="<?php echo admin_url('admin.php?page=russ_update_color&id=' . $row->id); ?>">Update</a></td> 
             </tr>
             <?php } ?>
         </table>
@@ -61,29 +61,29 @@ function russ_item_list() {
                 </tr>
                 <?php foreach ($rows as $row) { ?>
                 <tr>
-                    <td class="manage-column ss-list-width"><?php echo $row->Id; ?></td>
-                    <td class="manage-column ss-list-width"><?php echo $row->Name; ?></td>
-                    <td class="manage-column ss-list-width"><?php echo $row->Price; ?></td>
-                    <td class="manage-column ss-list-width"><?php echo $row->MinimumOrder; ?></td>
-                    <td class="manage-column ss-list-width"><?php  echo (($row->FrontBackOption == 1) ?  "Yes" :  "No") ?></td>
-                    <td class="manage-column ss-list-width"><?php  echo (($row->ExtraLogo == 1) ?  "Yes" :  "No")  ?></td>
+                    <td class="manage-column ss-list-width"><?php echo $row->id; ?></td>
+                    <td class="manage-column ss-list-width"><?php echo $row->name; ?></td>
+                    <td class="manage-column ss-list-width"><?php echo $row->price; ?></td>
+                    <td class="manage-column ss-list-width"><?php echo $row->minimumOrder; ?></td>
+                    <td class="manage-column ss-list-width"><?php  echo (($row->frontBackOption == 1) ?  "Yes" :  "No") ?></td>
+                    <td class="manage-column ss-list-width"><?php  echo (($row->extraLogo == 1) ?  "Yes" :  "No")  ?></td>
                     <td class="manage-column ss-list-width">
 
                         <?php  
 
                         $table_name_item_colors = $wpdb->prefix . "russ_item_colors";
                         $table_name_colors = $wpdb->prefix . "russ_colors";
-                        $res = $wpdb->get_results($wpdb->prepare("SELECT Color_Id from $table_name_item_colors where Item_Id=%s", $row->Id));
+                        $res = $wpdb->get_results($wpdb->prepare("SELECT colorId from $table_name_item_colors where itemId=%s", $row->id));
                         foreach( $res as $key => $row1) {
-                            $res1 = $wpdb->get_results($wpdb->prepare("SELECT Name from $table_name_colors where Id=%s", $row1->Color_Id));
+                            $res1 = $wpdb->get_results($wpdb->prepare("SELECT name from $table_name_colors where id=%s", $row1->colorId));
                             foreach ($res1 as $key => $value) {
-                                echo $value->Name . ", ";
+                                echo $value->name . ", ";
                             }                         
                         }
                         ?>
                     </td>
 
-                     <td><a href="<?php echo admin_url('admin.php?page=russ_item_add_image&id=' . $row->Id); ?>">Add Images</a></td>
+                     <td><a href="<?php echo admin_url('admin.php?page=russ_item_add_image&id=' . $row->id); ?>">Add Images</a></td>
                 </tr>
                 <?php } ?>
             </table>

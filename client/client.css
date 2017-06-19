@@ -1,5 +1,19 @@
-   .carousel-caption {
+.carousel-caption {
     bottom: 0;
     padding-bottom: 0;
     color: #000;
 }
+
+	
+.carousel-control.right, .carousel-control.left{
+	background-image: none;
+}
+
+.carousel-control.right:hover{
+	background-image: linear-gradient(to right,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5) 100%);
+}
+
+.carousel-control.left:hover{
+	background-image: linear-gradient(to right,rgba(0,0,0,.5) 0,rgba(0,0,0,.0001) 100%);
+}
+

@@ -8,7 +8,7 @@ function russ_create_color() {
 
        $res = $wpdb->insert(
                 $table_name, //table
-                array('Name' => $name), //data
+                array('name' => $name), //data
                 array('%s') //data format			
         );
         $message ="Color inserted";

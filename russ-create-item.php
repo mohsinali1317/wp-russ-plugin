@@ -19,8 +19,8 @@ function russ_create_item() {
 
         $wpdb->insert(
                 $table_name, //table
-                array('Name' => $name,'Description' => $description,'Price' => $price,'MinimumOrder' => $minAmount,'FrontBackOption' => $frontBackOption,
-                    'ExtraLogo' => $extraLogoOption),
+                array('name' => $name,'description' => $description,'price' => $price,'minimumOrder' => $minAmount,'frontBackOption' => $frontBackOption,
+                    'extraLogo' => $extraLogoOption),
                 array('%s','%s','%f','%d','%d', '%d')
         );
 
@@ -32,7 +32,7 @@ function russ_create_item() {
         foreach ($colors as $key => $value) {
             $wpdb->insert(
                 $table_name, //table
-                array('Item_Id' => $item_id,'Color_id' => $value), //data
+                array('itemId' => $item_id,'colorId' => $value), //data
                 array('%d', '%d')
             );
         }
@@ -102,7 +102,7 @@ function russ_create_item() {
                     <option>Select colors for this item</option>
                     <?php foreach ($rows as $row) { ?>
 
-                    <option value="<?php echo $row->Id; ?>"><?php echo $row->Name; ?></option>
+                    <option value="<?php echo $row->id; ?>"><?php echo $row->name; ?></option>
 
                     <?php } ?>
                 </select>

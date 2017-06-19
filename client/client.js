@@ -180,6 +180,9 @@ jQuery(document).ready(function($) {
 
     $('.sendOrder').click(function () {
 
+
+
+
         var secondStep = $(this).closest('.secondStep');
         var pricing = secondStep.siblings('.pricing');
 
@@ -207,11 +210,10 @@ jQuery(document).ready(function($) {
             'russGroupName' : russGroupName
         };
 
-        if(!checkData(orderAddress)){
-
+         if(!checkData(orderAddress)){
             error.show();
             return;
-        }
+         }
 
         
         var order = {
@@ -221,24 +223,19 @@ jQuery(document).ready(function($) {
             'itemId' : parameters.itemId
         }
 
-        // todo: fix the url composition
+    var data = {
+        action: 'test_response',
+        parameters:parameters,
+        orderAddress : orderAddress,
+        order : order
+    };
 
-        $.post({
-            url: "http://localhost/tutorials/wordpress/wp-admin/admin-post.php",
-            type: "POST",
-            cache: false,
-            data: {
-                action: "add_order",
-                parameters:parameters,
-                orderAddress : orderAddress,
-                order : order
-            },
-            success: function(response) {
-                secondStep.hide();
-                pricing.hide();
-                $('.thirdStep').show();
-            }
-        });
+    // the_ajax_script.ajaxurl is a variable that will contain the url to the ajax processing file
+    $.post(the_ajax_script.ajaxurl, data, function(response) {
+        secondStep.hide();
+        pricing.hide();
+        $('.thirdStep').show();
+    });
 
     });
 

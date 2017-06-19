@@ -1,6 +1,5 @@
 <?php
 
-
 function my_enqueue_client($hook) {
 
     prefix_enqueue();
@@ -9,6 +8,7 @@ function my_enqueue_client($hook) {
     wp_enqueue_style('crondale-russ-plugin-client');
 
     wp_enqueue_script('crondale-russ-plugin-client', plugins_url('/client.js', __FILE__ ));
+    wp_localize_script( 'crondale-russ-plugin-client', 'the_ajax_script', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
 }
 
 // todo: check if we want to download bootstrap directly here in he project
@@ -22,6 +22,9 @@ function prefix_enqueue()
     wp_register_style('prefix_bootstrap', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
     wp_enqueue_style('prefix_bootstrap');
 }
+
+
+
 
 function crondale_russ_shop_client()
 {
@@ -42,21 +45,20 @@ function crondale_russ_shop_client()
 
         $select = "";
 
-        $color_Ids = $wpdb->get_results($wpdb->prepare("SELECT Color_Id from $table_item_colors where Item_Id=%s", $value->Id));
+        $color_Ids = $wpdb->get_results($wpdb->prepare("SELECT colorId from $table_item_colors where itemId=%s", $value->id));
 
-        $itemImages = $wpdb->get_results($wpdb->prepare("SELECT Image_Id from $table_item_images where Item_Id=%d", $value->Id));
+        $itemImages = $wpdb->get_results($wpdb->prepare("SELECT imageId from $table_item_images where itemId=%d", $value->id));
 
 
         $select .= "<select class=\"form-control colors\">";
         foreach ($color_Ids as $key => $colorId) {
-            $colors = $wpdb->get_results($wpdb->prepare("SELECT * from $table_colors where Id=%s", $colorId->Color_Id));
+            $colors = $wpdb->get_results($wpdb->prepare("SELECT * from $table_colors where Id=%s", $colorId->colorId));
 
 
 
             foreach ($colors as $key => $color) {
-                $select .= "<option value = " . $color->Name . " >" . $color->Name . " </option>";
+                $select .= "<option value = " . $color->name . " >" . $color->name . " </option>";
             }
-
         }
         $select .= "</select>";
         ?>
@@ -66,34 +68,38 @@ function crondale_russ_shop_client()
                 <div class='item'>
                     <div class="firstStep">
                         <h1>
-                            <?php echo $value->Name . " - " . $value->Price; ?>
+                            <?php echo $value->name . " - " . $value->price; ?>
                         </h1>
                         <p>
-                            <?php echo $value->Description; ?>
+                            <?php echo $value->description; ?>
                         </p>
                         <hr>
 
                         <?php
 
-
-
-                        if ($value->FrontBackOption) {
+                        if ($value->frontBackOption) {
                             ?>
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="printPosition" class="printPosition" value="front" checked> Trykk foran
+                                    <input type="radio" name="printPosition" class="printPosition" value="front" checked/> Trykk foran
                                 </label>
                             </div>
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="printPosition" class="printPosition" value="back"> Trykk bak
+                                    <input type="radio" name="printPosition" class="printPosition" value="back"/> Trykk bak
                                 </label>
                             </div>
                             <hr>
                             <?php
                         }
 
-                        if ($value->ExtraLogo) {
+                        else{
+                            ?>
+                               <input type="radio" name="printPosition" class="printPosition hidden" value="none" checked/> 
+                            <?php
+                        } 
+
+                        if ($value->extraLogo) {
                             ?>
                             <div class="checkbox">
                                 <label>
@@ -121,7 +127,7 @@ function crondale_russ_shop_client()
 
                         <?php
 
-                        for ($i = 0; $i < $value->MinimumOrder; $i++) {
+                        for ($i = 0; $i < $value->minimumOrder; $i++) {
                             ?>
 
                             <div class="form-group item-row">
@@ -221,7 +227,7 @@ function crondale_russ_shop_client()
                             Total price Kr. <span> </span> ,-
                         </h5>
                         <!--    just for data-->
-                        <span class="myData" data-minimum-order ="<?php echo $value->MinimumOrder; ?>" data-price="<?php echo $value->Price; ?>" data-item-id ="<?php echo $value->Id; ?>">
+                        <span class="myData" data-minimum-order ="<?php echo $value->minimumOrder; ?>" data-price="<?php echo $value->price; ?>" data-item-id ="<?php echo $value->id; ?>">
                         </span>
                     </div>
 
@@ -233,7 +239,7 @@ function crondale_russ_shop_client()
 
             </div>
             <div class="col-md-4">    
-                <div id="imageCrousel<?php echo "_" . $value->Id ?>" class="carousel slide" data-ride="carousel">
+                <div id="imageCrousel<?php echo "_" . $value->id ?>" class="carousel slide" data-ride="carousel">
                  
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner">
@@ -248,9 +254,9 @@ function crondale_russ_shop_client()
                             $i++;
                             ?>
                             <div class="item <?php echo $className; ?>">
-                                <img src="<?php echo wp_get_attachment_image_url($s->Image_Id, 'full' ); ?>" class="img-responsive" alt ="<?php echo get_the_excerpt($s->Image_Id);?> "/>
+                                <img src="<?php echo wp_get_attachment_image_url($s->imageId, 'full' ); ?>" class="img-responsive" alt ="<?php echo get_the_excerpt($s->imageId);?> "/>
                                 <div class="carousel-caption d-none d-md-block">
-                                    <p><?php echo get_the_excerpt($s->Image_Id);?></p>
+                                    <p><?php echo get_the_excerpt($s->imageId);?></p>
                                 </div>
                             </div>
                             <?php
@@ -259,11 +265,11 @@ function crondale_russ_shop_client()
                     </div>
 
                     <!-- Left and right controls -->
-                    <a class="left carousel-control" href="#imageCrousel<?php echo "_" . $value->Id ?>" data-slide="prev">
+                    <a class="left carousel-control" href="#imageCrousel<?php echo "_" . $value->id ?>" data-slide="prev">
                         <span class="glyphicon glyphicon-chevron-left"></span>
                         <span class="sr-only">Previous</span>
                     </a>
-                    <a class="right carousel-control" href="#imageCrousel<?php echo "_" . $value->Id ?>" data-slide="next">
+                    <a class="right carousel-control" href="#imageCrousel<?php echo "_" . $value->id ?>" data-slide="next">
                         <span class="glyphicon glyphicon-chevron-right"></span>
                         <span class="sr-only">Next</span>
                     </a>
@@ -276,21 +282,19 @@ function crondale_russ_shop_client()
     </hr>
 
     <?php
+    }
+
+    return $html;
 }
 
 
-return $html;
-}
 
 
-// todo: check for the address etc stuff
 
-function prefix_admin_add_order() {
+function text_ajax_process_request() {
     // Handle request then generate response using echo or leaving PHP and using HTML
 
     if(isset($_REQUEST['parameters']) && isset($_REQUEST['orderAddress']) && isset($_REQUEST['order'])){
-
-        echo "1";
 
         global $wpdb;
         $table_order_receiver_info = $wpdb->prefix . "russ_order_receiver_info";
@@ -298,15 +302,14 @@ function prefix_admin_add_order() {
         $table_order_details = $wpdb->prefix . "russ_order_details";
 
 
-
         $order_receiver_info = $_REQUEST['orderAddress'];
         $order = $_REQUEST['order'];
 
         $message = "An order has been created by " . $order_receiver_info['fullName'];
 
-        echo $message;
+        //echo $message;
 
-        $wpdb->insert(
+         $wpdb->insert(
             $table_order_receiver_info, //table
             array('fullName' =>$order_receiver_info['fullName'] ,
                 'email' => $order_receiver_info['email'],
@@ -316,6 +319,14 @@ function prefix_admin_add_order() {
                 'telephone' => $order_receiver_info['telephone'],
                 'russGroupName' => $order_receiver_info['russGroupName'])
             );
+
+        echo $wpdb->insert_id;
+
+        if($wpdb->insert_id == 0)
+        {
+            echo "Recipeint error";
+            die();
+        }
 
 
         $receiver_id = $wpdb->insert_id;
@@ -334,6 +345,12 @@ function prefix_admin_add_order() {
 
         $order_id = $wpdb->insert_id;
 
+        if($wpdb->insert_id == 0)
+        {
+            $wpdb->query($wpdb->prepare("DELETE FROM $table_order_receiver_info WHERE id = %s", $receiver_id));
+            echo "Order error";
+            die();
+        }
 
         foreach ($_REQUEST['parameters'] as $key => $value){
 
@@ -349,22 +366,19 @@ function prefix_admin_add_order() {
 
         }
 
+        
+
     }
 
+
+    die();
 
 
 
    // wp_mail( "mohsinali1017@gmail.com", "Order created", $message );
 
 
-
-
-
-    status_header(200);
-
-  //  die("Server received '{$_REQUEST['parameters']}' from your browser.");
-
-
+   // status_header(200);
 
 
 }
