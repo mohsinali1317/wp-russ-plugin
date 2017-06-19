@@ -6,12 +6,14 @@ jQuery(document).ready(function($) {
 
     $( ".item" ).each(function( index ) {
 
+        var pricing = $( this ).children('.pricing');
+
         var firstStep = $( this ).children('.firstStep');
 
-        var pricePerPerson = firstStep.children('.pricePerPerson');
-        var totalPrice = firstStep.children('.totalPrice');
+        var pricePerPerson = pricing.children('.pricePerPerson');
+        var totalPrice = pricing.children('.totalPrice');
 
-        var data = firstStep.children('.myData');
+        var data = pricing.children('.myData');
 
         var spanForPrice = pricePerPerson.children('.priceFromData');
         var spanForTotalPrice = totalPrice.children('span');
@@ -33,13 +35,15 @@ jQuery(document).ready(function($) {
         var item = $(this).closest('.item');
         var firstStep = item.children('.firstStep');
 
-        var pricePerPerson = firstStep.children('.pricePerPerson');
-        var totalPrice = firstStep.children('.totalPrice');
+        var pricing = item.children('.pricing');
+
+        var pricePerPerson = pricing.children('.pricePerPerson');
+        var totalPrice = pricing.children('.totalPrice');
 
         var spanForPrice = pricePerPerson.children('.priceFromData');
         var spanForTotalPrice = totalPrice.children('span');
 
-        var data = firstStep.children('.myData');
+        var data = pricing.children('.myData');
 
         var price = data.data('price');
 
@@ -70,9 +74,11 @@ jQuery(document).ready(function($) {
         var item = $(this).closest('.item');
         var firstStep = item.children('.firstStep');
 
-        var pricePerPerson = firstStep.children('.pricePerPerson');
+        var pricing = item.children('.pricing');
 
-        var totalPrice = firstStep.children('.totalPrice');
+        var pricePerPerson = pricing.children('.pricePerPerson');
+
+        var totalPrice = pricing.children('.totalPrice');
 
         var itemRows = firstStep.children('.item-row');
 
@@ -85,7 +91,7 @@ jQuery(document).ready(function($) {
         var spanForPrice = pricePerPerson.children('.priceFromData');
         var spanForTotalPrice = totalPrice.children('span');
 
-        var data = firstStep.children('.myData');
+        var data = pricing.children('.myData');
 
         var price = data.data('price');
 
@@ -100,11 +106,13 @@ jQuery(document).ready(function($) {
         var item = $(this).closest('.item');
         var firstStep = item.children('.firstStep');
 
-        var pricePerPerson = firstStep.children('.pricePerPerson');
+        var pricing = item.children('.pricing');
 
-        var totalPrice = firstStep.children('.totalPrice');
+        var pricePerPerson = pricing.children('.pricePerPerson');
 
-        var data = firstStep.children('.myData');
+        var totalPrice = pricing.children('.totalPrice');
+
+        var data = pricing.children('.myData');
         var price = data.data('price');
 
 
@@ -135,10 +143,15 @@ jQuery(document).ready(function($) {
     $('.goToSecondStep').click(function () {
 
         var item = $(this).closest('.item');
+
+        var pricing = item.children('.pricing');
+
         var firstStep = item.children('.firstStep');
 
-        var data = firstStep.children('.myData');
+        var data = pricing.children('.myData');
+
         var totalPrice = data.data('total-price');
+
         var itemRows = firstStep.children('.item-row');
 
 
@@ -160,14 +173,15 @@ jQuery(document).ready(function($) {
        // console.log(parameters);
 
 
-        firstStep.hide();
-        $('.secondStep').show();
+       firstStep.hide();
+       $('.secondStep').show();
 
-    });
+   });
 
     $('.sendOrder').click(function () {
 
         var secondStep = $(this).closest('.secondStep');
+        var pricing = secondStep.siblings('.pricing');
 
         var fullName = $('.fullName', secondStep).val();
         var email = $('.email', secondStep).val();
@@ -199,15 +213,13 @@ jQuery(document).ready(function($) {
             return;
         }
 
-
+        
         var order = {
             'frontBack' : parameters.frontBack,
             'extraLogo' : (parameters.extraLogo == true) ? 1 : 0,
             'price' : parameters.price,
             'itemId' : parameters.itemId
         }
-
-
 
         // todo: fix the url composition
 
@@ -223,6 +235,7 @@ jQuery(document).ready(function($) {
             },
             success: function(response) {
                 secondStep.hide();
+                pricing.hide();
                 $('.thirdStep').show();
             }
         });
