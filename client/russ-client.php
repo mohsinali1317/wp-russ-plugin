@@ -4,7 +4,7 @@ function my_enqueue_client($hook) {
 
     prefix_enqueue();
 
-    wp_register_style('crondale-russ-plugin-client', plugins_url('crondale-russ-plugin/client/client.css'));
+    wp_register_style('crondale-russ-plugin-client', plugins_url('crondale-russ-shop/client/client.css'));
     wp_enqueue_style('crondale-russ-plugin-client');
 
     wp_enqueue_script('crondale-russ-plugin-client', plugins_url('/client.js', __FILE__ ));
@@ -22,8 +22,6 @@ function prefix_enqueue()
     wp_register_style('prefix_bootstrap', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
     wp_enqueue_style('prefix_bootstrap');
 }
-
-
 
 
 function crondale_russ_shop_client()
@@ -63,7 +61,8 @@ function crondale_russ_shop_client()
         $select .= "</select>";
         ?>
 
-        <div class="row">
+
+        <div class="row russ-plugin">
             <div class="col-md-8">
                 <div class='item'>
                     <div class="firstStep">
@@ -73,6 +72,15 @@ function crondale_russ_shop_client()
                         <p>
                             <?php echo $value->description; ?>
                         </p>
+
+                         <p class="expand-parent">
+                          <a class="expand" data-toggle="collapse" href="#collapseItem_<?php echo $value->id; ?>" aria-expanded="false" aria-controls="collapseExample">
+                            Expandes ned ved trykk legg til
+                        </a>
+                    </p>
+                   
+
+                        <section class="collapse" id="collapseItem_<?php echo $value->id; ?>">
                         <hr>
 
                         <?php
@@ -152,7 +160,7 @@ function crondale_russ_shop_client()
                                         ?>
                                     </div>
                                     <div class="col-xs-4 col-sm-2">
-                                        <button class="btn btn--icon removeGenser">Remove</button>
+                                        <button class="btn btn-danger flat removeGenser">Fjern</button>
                                     </div>
                                 </div>
                             </div>
@@ -163,12 +171,12 @@ function crondale_russ_shop_client()
                         ?>
 
                         <div class="text-center">
-                            <button class="btn addGenser">
-                                Add genser
+                            <button class="btn btn-success flat addGenser">
+                                Legg til
                             </button>
                         </div>
 
-                        
+                        </section>
                         
 
                         <hr>
@@ -238,7 +246,7 @@ function crondale_russ_shop_client()
                 </div>
 
             </div>
-            <div class="col-md-4">    
+             <div class="col-md-4">    
                 <div id="imageCrousel<?php echo "_" . $value->id ?>" class="carousel slide" data-ride="carousel">
                  
                     <!-- Wrapper for slides -->
@@ -273,11 +281,14 @@ function crondale_russ_shop_client()
                         <span class="glyphicon glyphicon-chevron-right"></span>
                         <span class="sr-only">Next</span>
                     </a>
-                </div>
+                </div> 
 
                 
             </div>
-        </div>
+        </div> 
+
+
+
 
     </hr>
 

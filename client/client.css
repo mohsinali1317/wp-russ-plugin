@@ -17,3 +17,19 @@
 	background-image: linear-gradient(to right,rgba(0,0,0,.5) 0,rgba(0,0,0,.0001) 100%);
 }
 
+.russ-plugin *{
+	box-sizing: border-box;
+}
+
+.flat{
+	border-radius: 0;
+}
+
+.expand-parent{
+	text-align: center;
+}
+
+.expand{
+	color:#8FC493;
+	font-size: 14px;
+}
