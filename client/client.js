@@ -1,41 +1,118 @@
+var totalPricing;
+var itemsForTotalPrice = [];
+var parameters = [];
+var totalPriceForAllItems = 0;
+
+var expandMessage = "Expand to add items in cart";
+var collapseMessage = "Collapse to remove everything from cart";
+
 jQuery(document).ready(function($) {
 
     // setting initial values
 
-    var parameters = [];
+    totalPricing = $(this).find('.tPricing');
 
     $( ".item" ).each(function( index ) {
 
-        var pricing = $( this ).children('.pricing');
+
+        if($( this ).hasClass('images'))
+            return;
+
 
         var firstStep = $( this ).children('.firstStep');
 
+        var itemSection = firstStep.children('.itemSection');
+
+        var pricing = itemSection.children('.pricing');
+
+
         var pricePerPerson = pricing.children('.pricePerPerson');
+
         var totalPrice = pricing.children('.totalPrice');
 
         var data = pricing.children('.myData');
 
         var spanForPrice = pricePerPerson.children('.priceFromData');
+
         var spanForTotalPrice = totalPrice.children('span');
 
         var price = data.data('price');
         var minimumOrder = data.data('minimum-order');
 
-        var totalPrice = price * minimumOrder;
-        data.data('total-price',totalPrice );
+        var tp = price * minimumOrder;
+        data.data('total-price',tp );
 
         spanForPrice.text(price);
-        spanForTotalPrice.text(totalPrice);
+        spanForTotalPrice.text(tp);
+
 
 
     });
+
+
+    $('.firstStep').on('shown.bs.collapse', function () {
+        
+        var item = $(this).closest('.item');
+        var firstStep = item.children('.firstStep');
+        var itemSection = firstStep.children('.itemSection');
+        var pricing = itemSection.children('.pricing');
+
+        var data = pricing.children('.myData');
+
+        var expand = firstStep.find('.expand');
+
+        expand.text(collapseMessage);
+
+
+
+        var obj = {
+
+            id : data.data('item-id'), 
+            pricePerItem : data.data('price'),
+            minimumOrders : data.data('minimum-order'),
+            numberOfOrders : firstStep.find('.item-row').length
+        }
+
+
+       updateTotalPrice(obj, $);
+
+    });
+
+    $('.firstStep').on('hidden.bs.collapse', function () {
+       var item = $(this).closest('.item');
+        var firstStep = item.children('.firstStep');
+        var itemSection = firstStep.children('.itemSection');
+        var pricing = itemSection.children('.pricing');
+
+        var data = pricing.children('.myData');
+
+
+        var expand = firstStep.find('.expand');
+
+        expand.text(expandMessage);
+
+        var obj = {
+
+            id : data.data('item-id'), 
+            pricePerItem : data.data('price'),
+            minimumOrders : data.data('minimum-order'),
+            numberOfOrders : firstStep.find('.item-row').length
+        }
+
+
+       updateTotalPrice(obj, $, true);
+    });
+
 
     $('.extraLogo').click(function() {
 
         var item = $(this).closest('.item');
         var firstStep = item.children('.firstStep');
 
-        var pricing = item.children('.pricing');
+        var itemSection = firstStep.children('.itemSection');
+
+
+        var pricing = itemSection.children('.pricing');
 
         var pricePerPerson = pricing.children('.pricePerPerson');
         var totalPrice = pricing.children('.totalPrice');
@@ -64,6 +141,17 @@ jQuery(document).ready(function($) {
             priceMaipulation(price,data,spanForPrice,spanForTotalPrice,numberOfOrders);
         }
 
+         var obj = {
+
+            id : data.data('item-id'), 
+            pricePerItem : data.data('price'),
+            minimumOrders : data.data('minimum-order'),
+            numberOfOrders : firstStep.find('.item-row').length
+        }
+
+
+       updateTotalPrice(obj, $);
+
     });
 
     // todo: when adding genser after filling the details it copies the details of the last one and carries it.
@@ -74,13 +162,16 @@ jQuery(document).ready(function($) {
         var item = $(this).closest('.item');
         var firstStep = item.children('.firstStep');
 
-        var pricing = item.children('.pricing');
+        var itemSection = firstStep.children('.itemSection');
+
+
+        var pricing = itemSection.children('.pricing');
 
         var pricePerPerson = pricing.children('.pricePerPerson');
 
         var totalPrice = pricing.children('.totalPrice');
 
-        var itemRows = firstStep.children('.item-row');
+        var itemRows = firstStep.find('.item-row');
 
         var itemRow = itemRows.last();
 
@@ -99,6 +190,19 @@ jQuery(document).ready(function($) {
 
         priceMaipulation(price,data,spanForPrice,spanForTotalPrice,minimumOrder);
 
+        var obj = {
+
+            id : data.data('item-id'), 
+            pricePerItem : data.data('price'),
+            minimumOrders : data.data('minimum-order'),
+            numberOfOrders : firstStep.find('.item-row').length
+        }
+
+
+
+       updateTotalPrice(obj, $);
+
+
 
     });
 
@@ -106,7 +210,9 @@ jQuery(document).ready(function($) {
         var item = $(this).closest('.item');
         var firstStep = item.children('.firstStep');
 
-        var pricing = item.children('.pricing');
+        var itemSection = firstStep.children('.itemSection');
+
+        var pricing = itemSection.children('.pricing');
 
         var pricePerPerson = pricing.children('.pricePerPerson');
 
@@ -118,7 +224,7 @@ jQuery(document).ready(function($) {
 
         var minimumOrder = data.data('minimum-order');
 
-        var itemRows = firstStep.children('.item-row');
+        var itemRows = firstStep.find('.item-row');
 
         if(itemRows.length <= minimumOrder)
             return;
@@ -138,8 +244,22 @@ jQuery(document).ready(function($) {
             numberOfOrders = minimumOrder;
 
         priceMaipulation(price,data,spanForPrice,spanForTotalPrice,numberOfOrders);
+
+        var obj = {
+
+            id : data.data('item-id'), 
+            pricePerItem : data.data('price'),
+            minimumOrders : data.data('minimum-order'),
+            numberOfOrders : firstStep.find('.item-row').length
+        }
+
+
+
+       updateTotalPrice(obj, $);
     });
 
+
+// todo: take this one out
     $('.goToSecondStep').click(function () {
 
         var item = $(this).closest('.item');
@@ -181,10 +301,45 @@ jQuery(document).ready(function($) {
     $('.sendOrder').click(function () {
 
 
+        $( ".item" ).each(function( index ) {
+
+        if( $( this ).find('.itemSection').hasClass('in')){
+
+            var firstStep = $( this ).children('.firstStep');
+
+            var pricing = $( this ).find('.pricing');
+
+            var data = pricing.children('.myData');
+
+            var totalPrice = data.data('total-price');
+
+            var itemRows = firstStep.find('.item-row');
+
+            var item = {};
+            item.itemId = data.data('item-id');
+            item.orders = [];
+
+
+            $( itemRows ).each(function( index ) {
+                item.orders.push({
+                    'name' : $(this).find('.nameOnShirt').first().val(),
+                    'size' : $(this).find('.size').first().val(),
+                    'color' : $(this).find('.colors').first().val(),
+
+                })
+            });
+
+            item.frontBack = $('input[type=radio].printPosition:checked', firstStep).val();
+            item.extraLogo = $('input[name=extraLogo]', firstStep).is(':checked')  ? 1 : 0;
+            item.price = totalPrice;
+            
+            parameters.push(item);
+            }
+        
+    });
 
 
         var secondStep = $(this).closest('.secondStep');
-        var pricing = secondStep.siblings('.pricing');
 
         var fullName = $('.fullName', secondStep).val();
         var email = $('.email', secondStep).val();
@@ -196,10 +351,6 @@ jQuery(document).ready(function($) {
 
         var error = $('.error', secondStep);
 
-
-
-
-
         var orderAddress = {
             'fullName' : fullName,
             'email' : email,
@@ -210,37 +361,102 @@ jQuery(document).ready(function($) {
             'russGroupName' : russGroupName
         };
 
+
          if(!checkData(orderAddress)){
             error.show();
             return;
          }
 
-        
-        var order = {
-            'frontBack' : parameters.frontBack,
-            'extraLogo' : (parameters.extraLogo == true) ? 1 : 0,
-            'price' : parameters.price,
-            'itemId' : parameters.itemId
-        }
 
     var data = {
         action: 'add_order',
         parameters:parameters,
-        orderAddress : orderAddress,
-        order : order
+        orderAddress : orderAddress
     };
 
+   // console.log(data);
+
     // the_ajax_script.ajaxurl is a variable that will contain the url to the ajax processing file
-    $.post(the_ajax_script.ajaxurl, data, function(response) {
-        secondStep.hide();
-        pricing.hide();
-        $('.thirdStep').show();
-    });
+     $.post(the_ajax_script.ajaxurl, data, function(response) {
+     }).done(function(response) {
+        console.log(response);
+        cleanUpEverythig($);
+      })
+      .fail(function(error) {
+        console.log(error.responseText);
+      })
+     
 
     });
 
 
 });
+
+
+function updateTotalPrice(obj,$, remove = false){
+
+
+
+    if(remove){
+        itemsForTotalPrice = $.grep(itemsForTotalPrice, function(el, idx) {return el.id == obj.id;}, true)
+    }
+
+    else {
+        var result = $.grep(itemsForTotalPrice, function(e){ return e.id == obj.id; });
+
+
+        if(result.length == 0)
+            itemsForTotalPrice.push(obj);
+
+        else{
+
+
+            for (var i in itemsForTotalPrice) {
+               if (itemsForTotalPrice[i].id == obj.id) {
+                itemsForTotalPrice[i].pricePerItem = obj.pricePerItem;
+                itemsForTotalPrice[i].numberOfOrders = obj.numberOfOrders;
+            break; //Stop this loop, we found it!
+                }
+            }
+        }
+    }
+
+
+    updateTotalPriceOnGUI();
+}
+
+
+function updateTotalPriceOnGUI(){
+
+    var totalPrice = 0;
+
+    for(item in itemsForTotalPrice)
+    {
+        totalPrice += itemsForTotalPrice[item].pricePerItem * itemsForTotalPrice[item].numberOfOrders;
+    }
+
+    var tp = totalPricing.children('.totalPrice');
+
+    var spanForTotalPrice = tp.children('span');
+
+
+    totalPriceForAllItems = totalPrice;
+
+    spanForTotalPrice.text(totalPriceForAllItems);
+
+
+}
+
+function cleanUpEverythig($){
+
+    $('.secondStep').find('input').val('');
+    $('.secondStep').hide();
+    $('.thirdStep').show();
+
+
+    
+
+}
 
 function checkIfOkay(data) {
 

@@ -61,240 +61,64 @@ function crondale_russ_shop_client()
         $select .= "</select>";
         ?>
 
-
-        <div class="row russ-plugin">
+        <div class="russ-plugin">
+        <div class="row">
             <div class="col-md-8">
                 <div class='item'>
-                    <div class="firstStep">
-                        <h1>
-                            <?php echo $value->name . " - " . $value->price; ?>
-                        </h1>
-                        <p>
-                            <?php echo $value->description; ?>
-                        </p>
-
-                         <p class="expand-parent">
-                          <a class="expand" data-toggle="collapse" href="#collapseItem_<?php echo $value->id; ?>" aria-expanded="false" aria-controls="collapseExample">
-                            Expandes ned ved trykk legg til
-                        </a>
-                    </p>
-                   
-
-                        <section class="collapse" id="collapseItem_<?php echo $value->id; ?>">
-                        <hr>
-
-                        <?php
-
-                        if ($value->frontBackOption) {
-                            ?>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="printPosition" class="printPosition" value="front" checked/> Trykk foran
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="printPosition" class="printPosition" value="back"/> Trykk bak
-                                </label>
-                            </div>
-                            <hr>
-                            <?php
-                        }
-
-                        else{
-                            ?>
-                               <input type="radio" name="printPosition" class="printPosition hidden" value="none" checked/> 
-                            <?php
-                        } 
-
-                        if ($value->extraLogo) {
-                            ?>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" name="extraLogo"  class="extraLogo"> Ekstra brystlogo (+ kr. 99 per genser)
-                                </label>
-                            </div>
-
-                            <hr>
-                            <?php
-                        }
-
-                        ?>
-
-                        <div class="row">
-                            <label class="col-xs-5 col-sm-4">
-                                Navn på rygg
-                            </label>
-                            <label class="col-xs-4 col-sm-3">
-                                Størrelse
-                            </label>
-                            <label class="col-xs-3 col-sm-2">
-                                Farge
-                            </label>
-                        </div>
-
-                        <?php
-
-                        for ($i = 0; $i < $value->minimumOrder; $i++) {
-                            ?>
-
-                            <div class="form-group item-row">
-                                <div class="row">
-                                    <div class="col-xs-12 col-sm-4">
-                                        <input class="form-control nameOnShirt" type="text" name="nameOnShirt"  placeholder="Navn på rygg" >
-                                    </div>
-                                    <div class="col-xs-4 col-sm-2">
-                                        <select class="form-control size">
-                                            <option value="xs">XS</option>
-                                            <option value="s">S</option>
-                                            <option value="m">M</option>
-                                            <option value="l">L</option>
-                                            <option value="xl">XL</option>
-                                            <option value="xxl">2XL</option>
-                                            <option value="xxxl">3XL</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-xs-4 col-sm-4">
-                                        <?php
-                                        echo $select;
-                                        ?>
-                                    </div>
-                                    <div class="col-xs-4 col-sm-2">
-                                        <button class="btn btn-danger flat removeGenser">Fjern</button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <?php
-                        }
-
-                        ?>
-
-                        <div class="text-center">
-                            <button class="btn btn-success flat addGenser">
-                                Legg til
-                            </button>
-                        </div>
-
-                        </section>
-                        
-
-                        <hr>
-                        <button class="btn goToSecondStep">Gå videre</button>
-                        <?php
-                        ?>
-                    </div>
-
-                    <div class="secondStep" style="display: none">
-
-                        <h3>Send bestilling</h3>
-                        <div class="form-group">
-                            <input class="form-control fullName" type="text" placeholder="Fullt navn" autocorrect="off" autocapitalize="words" autocomplete="name">
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control email" type="email" placeholder="E-post" autocorrect="off" autocapitalize="off" autocomplete="email">
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control telephone" type="text" placeholder="Telefon" autocorrect="off" autocapitalize="off">
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control address" type="text" placeholder="Addresse" autocorrect="off">
-                        </div>
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <input class="form-control postNumber" type="text" placeholder="Postnummer" pattern="d*" novalidate="" autocorrect="off">
-                                </div>
-                                <div class="col-sm-6">
-                                    <input class="form-control city" type="text" placeholder="Poststed">
-                                </div>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="form-group">
-                            <input class="form-control russGroupName" type="text" placeholder="Navn på russegruppe" autocorrect="off">
-                        </div>
-                        <hr>
-
-                        <span class="error" style="display: none;">Du må fylle inn alle feltene over.</span>
-
-                        <hr>
-
-                        <p>Når bestillingen er sendt får du instruksjoner om hvor du skal sende logoen.</p>
-
-                        <button class="btn sendOrder">Send bestilling</button>
-                    </div>
-
-                    <div class="pricing">
-                        <hr>
-                        <h5 class="pricePerPerson">
-                            Price per person Kr.  <span class="priceFromData"> </span>  ,-
-                        </h5>
-                        <hr>
-                        <h5 class="totalPrice">
-                            Total price Kr. <span> </span> ,-
-                        </h5>
-                        <!--    just for data-->
-                        <span class="myData" data-minimum-order ="<?php echo $value->minimumOrder; ?>" data-price="<?php echo $value->price; ?>" data-item-id ="<?php echo $value->id; ?>">
-                        </span>
-                    </div>
-
-                    <div class="thirdStep" style="display: none">
-                        <h3>Takk for bestillingen!</h3>
-                        <p>Bestilling information</p>
-                    </div>
+                    <?php require('firstStep.php'); ?>
                 </div>
 
             </div>
-             <div class="col-md-4">    
-                <div id="imageCrousel<?php echo "_" . $value->id ?>" class="carousel slide" data-ride="carousel">
-                 
-                    <!-- Wrapper for slides -->
-                    <div class="carousel-inner">
-                        <?php
-                        $i = 0;
-                        foreach ($itemImages as $s) {
-                            if ($i == 0) {
-                                $className = "active"; 
-                            }else{
-                                $className = "";
-                            }
-                            $i++;
-                            ?>
-                            <div class="item <?php echo $className; ?>">
-                                <img src="<?php echo wp_get_attachment_image_url($s->imageId, 'full' ); ?>" class="img-responsive" alt ="<?php echo get_the_excerpt($s->imageId);?> "/>
-                                <div class="carousel-caption d-none d-md-block">
-                                    <p><?php echo get_the_excerpt($s->imageId);?></p>
-                                </div>
-                            </div>
-                            <?php
-                        }
-                        ?>
-                    </div>
 
-                    <!-- Left and right controls -->
-                    <a class="left carousel-control" href="#imageCrousel<?php echo "_" . $value->id ?>" data-slide="prev">
-                        <span class="glyphicon glyphicon-chevron-left"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="right carousel-control" href="#imageCrousel<?php echo "_" . $value->id ?>" data-slide="next">
-                        <span class="glyphicon glyphicon-chevron-right"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div> 
+            <!-- this here is the image crousel section -->
+            
+            <!-- todo: I have taken out the image section out, put it back after done with chnages -->
 
-                
-            </div>
         </div> 
-
-
-
-
     </hr>
 
     <?php
     }
 
+    ?>
+
+
+
+
+    <!-- this here is the pricing section -->
+    <div class="row">
+        <div class="col-xs-12">
+        </hr>
+             <div class="tPricing">
+                <h3 class="totalPrice green-info-header">
+                    Total price Kr. <span> 0 </span> ,-
+                </h3>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- this here is the order form -->
+    <div class="row">
+        <div class="col-xs-8">
+        </hr>
+            <?php require_once('secondStep.php'); ?>
+        </div>
+    </div>
+
+
+    <!-- this here is after order placed -->
+    <div class="row">
+        <div class="col-xs-8">
+        </hr>
+            <?php require_once('thirdStep.php'); ?>
+        </div>
+    </div>
+     
+    </div>
+
+<?php
     return $html;
 }
 
@@ -303,9 +127,10 @@ function crondale_russ_shop_client()
 
 
 function add_order() {
+
     // Handle request then generate response using echo or leaving PHP and using HTML
 
-    if(isset($_REQUEST['parameters']) && isset($_REQUEST['orderAddress']) && isset($_REQUEST['order'])){
+    if(isset($_REQUEST['parameters']) && isset($_REQUEST['orderAddress'])){
 
         global $wpdb;
         $table_order_receiver_info = $wpdb->prefix . "russ_order_receiver_info";
@@ -314,11 +139,9 @@ function add_order() {
 
 
         $order_receiver_info = $_REQUEST['orderAddress'];
-        $order = $_REQUEST['order'];
+       
 
         $message = "An order has been created by " . $order_receiver_info['fullName'];
-
-        //echo $message;
 
          $wpdb->insert(
             $table_order_receiver_info, //table
@@ -331,71 +154,76 @@ function add_order() {
                 'russGroupName' => $order_receiver_info['russGroupName'])
             );
 
-        echo $wpdb->insert_id;
 
         if($wpdb->insert_id == 0)
         {
-            echo "Recipeint error";
+            status_header( 500 );
+            echo "Recipeint data error";
             die();
         }
 
 
         $receiver_id = $wpdb->insert_id;
 
+        foreach ($_REQUEST['parameters'] as $key => $value){
 
-        $wpdb->insert(
+                   $wpdb->insert(
             $table_orders, //table
-            array('frontBack' =>$order['frontBack'] ,
-                'extraLogo' => $order['extraLogo'],
-                'price' => $order['price'],
+            array('frontBack' =>$value['frontBack'] ,
+                'extraLogo' => $value['extraLogo'],
+                'price' => $value['price'],
                 'receiver_id' => $receiver_id,
-                'item_id' => $order['itemId']),
+                'item_id' => $value['itemId']),
 
             array('%s','%d','%d','%d','%d')
             );
+            
 
-        $order_id = $wpdb->insert_id;
+           
+            $order_id = $wpdb->insert_id;
+
 
         if($wpdb->insert_id == 0)
         {
             $wpdb->query($wpdb->prepare("DELETE FROM $table_order_receiver_info WHERE id = %s", $receiver_id));
+            status_header( 500 );
             echo "Order error";
             die();
         }
 
-        foreach ($_REQUEST['parameters'] as $key => $value){
+            foreach ($value['orders'] as $k => $v){
 
 
             $wpdb->insert(
                 $table_order_details, //table
-                array('name' =>$value['name'] ,
-                    'size' => $value['size'],
-                    'color' => $value['color'],
+                array('name' =>$v['name'] ,
+                    'size' => $v['size'],
+                    'color' => $v['color'],
                     'orderId' =>  $order_id ),
                 array('%s','%s','%s','%d')
                 );
 
+            }
+           
         }
 
-        
+    status_header(200);
+    echo "It went all fine!!";
+    die();
 
     }
 
+    else
+    {
+        status_header(500);
+        echo "Some data was not sent from server properly.";
+        die();
 
-    die();
-
-
+    }
+    
 
    // wp_mail( "mohsinali1017@gmail.com", "Order created", $message );
 
-
-   // status_header(200);
-
-
 }
-
-
-
-
 
 ?>

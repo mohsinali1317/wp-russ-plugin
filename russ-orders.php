@@ -52,7 +52,7 @@ function russ_orders(){
 
             <tr>
                 <td class="manage-column ss-list-width"><?php echo $order->id; ?></td>
-                <td class="manage-column ss-list-width"><?php echo $item->Name; ?></td>
+                <td class="manage-column ss-list-width"><?php echo $item->name; ?></td>
                 <td class="manage-column ss-list-width"><?php echo $order->price . ' kr' ; ?></td>
                 <td class="manage-column ss-list-width"><?php echo ($order->extraLogo == 1 ? 'Yes' : 'No'); ?></td>
                 <td class="manage-column ss-list-width"><?php echo $order->frontBack; ?></td>
