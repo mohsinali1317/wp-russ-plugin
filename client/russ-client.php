@@ -49,6 +49,8 @@ function crondale_russ_shop_client()
 
 
         $select .= "<select class=\"form-control colors\">";
+        $select .= "<option value=\"\">Velg</option>";
+
         foreach ($color_Ids as $key => $colorId) {
             $colors = $wpdb->get_results($wpdb->prepare("SELECT * from $table_colors where Id=%s", $colorId->colorId));
 
@@ -87,7 +89,7 @@ function crondale_russ_shop_client()
 
     <!-- this here is the pricing section -->
     <div class="row">
-        <div class="col-xs-12">
+        <div class="col-xs-12 col-md-8">
         </hr>
              <div class="tPricing">
                 <h3 class="totalPrice green-info-header">
@@ -101,7 +103,7 @@ function crondale_russ_shop_client()
 
     <!-- this here is the order form -->
     <div class="row">
-        <div class="col-xs-8">
+        <div class="col-xs-12 col-md-8">
         </hr>
             <?php require_once('secondStep.php'); ?>
         </div>
@@ -110,7 +112,7 @@ function crondale_russ_shop_client()
 
     <!-- this here is after order placed -->
     <div class="row">
-        <div class="col-xs-8">
+        <div class="col-xs-12 col-md-8">
         </hr>
             <?php require_once('thirdStep.php'); ?>
         </div>

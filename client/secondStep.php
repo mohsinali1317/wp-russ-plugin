@@ -27,7 +27,7 @@
     <div class="form-group">
         <input class="form-control russGroupName" type="text" placeholder="Navn på russegruppe" autocorrect="off">
     </div>
-    <hr>
+    
 
     <span class="error" style="display: none;">Du må fylle inn alle feltene over.</span>
 

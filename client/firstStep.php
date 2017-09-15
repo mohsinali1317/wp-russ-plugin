@@ -80,6 +80,7 @@
                 </div>
                 <div class="col-xs-4 col-sm-2">
                     <select class="form-control size">
+                        <option value="">Velg</option>
                         <option value="xs">XS</option>
                         <option value="s">S</option>
                         <option value="m">M</option>
@@ -107,7 +108,7 @@
 
     <div class="text-center">
         <button class="btn btn-success flat addGenser">
-            Legg til
+            Ekstra <?php echo explode(" ", $value->name)[0] ?>
         </button>
     </div>
 
