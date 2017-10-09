@@ -76,6 +76,10 @@ function crondale_russ_shop_client()
             
             <!-- todo: I have taken out the image section out, put it back after done with chnages -->
 
+            <div class="col-md-4 images">
+                <?php require('imageSection.php'); ?>
+            </div>
+
         </div> 
     </hr>
 

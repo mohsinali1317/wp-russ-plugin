@@ -1,6 +1,10 @@
  <div class="firstStep">
 
     <h1>
+        <button class="btn btn-success flat expand" data-toggle="collapse" href="#collapseItem_<?php echo $value->id; ?>" aria-expanded="false" aria-controls="collapseExample">
+            Legg til
+        </button>
+
        <?php echo $value->name . " - " . $value->price; ?>
     </h1>
 
@@ -8,10 +12,11 @@
         <?php echo $value->description; ?>
     </p>
 
+
     <p class="expand-parent">
-        <a class="expand" data-toggle="collapse" href="#collapseItem_<?php echo $value->id; ?>" aria-expanded="false" aria-controls="collapseExample">
-            Expand to add items in cart
-        </a>
+        <span class="expand-text">
+            Expandes ned ved trykk legg til
+        </span>
     </p>
 
 

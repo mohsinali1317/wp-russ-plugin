@@ -3,8 +3,6 @@ var itemsForTotalPrice = [];
 var parameters = [];
 var totalPriceForAllItems = 0;
 
-var expandMessage = "Expand to add items in cart";
-var collapseMessage = "Collapse to remove everything from cart";
 
 jQuery(document).ready(function($) {
 
@@ -45,8 +43,6 @@ jQuery(document).ready(function($) {
         spanForPrice.text(price);
         spanForTotalPrice.text(tp);
 
-
-
     });
 
 
@@ -60,11 +56,20 @@ jQuery(document).ready(function($) {
         var data = pricing.children('.myData');
 
         var expand = firstStep.find('.expand');
+        var expandText = firstStep.find('.expand-text');
 
-        expand.text(collapseMessage);
+        var images = item.parent().siblings('.images');
 
 
+        var thumbnailImage = images.children('.thumbnailImage');
+        var largeImage = images.children('.largeImage');
 
+        thumbnailImage.hide();
+        largeImage.show();
+
+
+        expand.hide();
+        expandText.hide();
         var obj = {
 
             id : data.data('item-id'), 
@@ -88,8 +93,19 @@ jQuery(document).ready(function($) {
 
 
         var expand = firstStep.find('.expand');
+        var expandText = firstStep.find('.expand-text');
 
-        expand.text(expandMessage);
+         var images = item.parent().siblings('.images');
+
+
+        var thumbnailImage = images.children('.thumbnailImage');
+        var largeImage = images.children('.largeImage');
+
+        thumbnailImage.show();
+        largeImage.hide();
+
+        expand.show();
+        expandText.show();
 
         var obj = {
 
@@ -226,8 +242,11 @@ jQuery(document).ready(function($) {
 
         var itemRows = firstStep.find('.item-row');
 
-        if(itemRows.length <= minimumOrder)
+        if(itemRows.length <= minimumOrder){
+            var expand = firstStep.find('.expand');
+            expand.click();
             return;
+        }
 
         var itemRow = itemRows.last();
 
